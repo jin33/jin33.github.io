@@ -79,10 +79,13 @@ a { color: inherit; }
 
 /* ---- hero ---- */
 
-.hero { padding-block: 7rem 4rem; }
+/* h1・リード文がない間は、eyebrow だけが hero の中身になる。
+   本文がある前提の余白のままだと間延びするので、いったん詰めてある。
+   キャッチコピーを戻したら padding-block も 7rem 4rem 付近に戻す。 */
+.hero { padding-block: 3.5rem 2rem; }
 
 .hero-eyebrow {
-  margin: 0 0 1rem;
+  margin: 0;
   font-size: 0.85rem;
   font-weight: 650;
   /* "iPhone & iPad" は固有の大文字小文字がある表記なので、ラベルらしさは
@@ -92,21 +95,8 @@ a { color: inherit; }
   color: var(--fg-muted);
 }
 
-.hero h1 {
-  margin: 0 0 1.25rem;
-  font-size: clamp(2.6rem, 8vw, 4.6rem);
-  line-height: 1.08;
-  letter-spacing: -0.045em;
-  font-weight: 700;
-}
-
-.hero-lead {
-  margin: 0;
-  max-width: 30rem;
-  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-  color: var(--fg-muted);
-  letter-spacing: -0.01em;
-}
+/* h1 とリード文はキャッチコピーが決まるまで空欄にしてある。eyebrow の下の
+   余白だけで間を持たせる。文言が決まったら .hero に h1 / .hero-lead を戻す。 */
 
 /* ---- app grid ---- */
 
@@ -119,49 +109,30 @@ a { color: inherit; }
   padding-bottom: 6rem;
 }
 
-/* カード自体の地色はテーマ共通の --surface に統一する。以前はアプリごとの
-   基調色をカード全面に敷いていたが、10枚並ぶと統一感がなく騒がしかった。
-   各アプリの色は、左端のバー・アイコンの影・矢印の3点にだけ残し、遷移先
-   ページの配色との繋がりを保ちつつ、一覧としては1枚のグリッドに見せる。 */
+/* カードは地色・枠だけの完全に均質なリストにする。以前はアプリごとの
+   色を左バーやアイコンの影で残していたが、それでも10枚並ぶとちらつき、
+   参考にした大手サイトのリストほど落ち着いて見えなかった。ホバーの
+   浮き上がり・ぼかしも同じ理由でやめ、枠線の濃さだけ変える。 */
 .card {
-  --tint: var(--accent-app, var(--accent));
-
-  position: relative;
   display: flex;
   align-items: center;
   gap: 1.1rem;
-  padding: 1.4rem 1.4rem 1.4rem 1.7rem;
+  padding: 1.4rem;
   border-radius: 22px;
-  overflow: hidden;
   text-decoration: none;
   background: var(--surface);
   border: 1px solid var(--line);
   color: var(--fg);
-  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
-    border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.2s ease;
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  inset-block: 0;
-  left: 0;
-  width: 4px;
-  background: var(--tint);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: var(--tint);
-  box-shadow: 0 10px 28px -12px var(--tint);
-}
+.card:hover { border-color: var(--fg-muted); }
 
 .card img {
   width: 72px;
   height: 72px;
   border-radius: 17px;
   flex: none;
-  box-shadow: 0 4px 16px -4px var(--tint);
 }
 
 .card-text { flex: 1; min-width: 0; }
@@ -180,7 +151,7 @@ a { color: inherit; }
   line-height: 1.5;
 }
 
-.card-arrow { width: 16px; height: 16px; flex: none; color: var(--tint); opacity: 0.75; }
+.card-arrow { width: 16px; height: 16px; flex: none; color: var(--fg-muted); opacity: 0.5; }
 
 /* ---- privacy policy ---- */
 

@@ -23,23 +23,19 @@ DATA = Path(__file__).resolve().parent / "appstore.json"
 FACEBOOK = "https://www.facebook.com/pages/Holy-inc-Apps/136263789773255"
 DEVELOPER = "https://apps.apple.com/jp/developer/holy-inc/id359389894"
 
-# 各アプリの一言と、アクセント色。カード自体の地色は共通（site.css の --surface）で、
-# ここで指定する色は左端のバー・アイコンの影・矢印にだけ使う。値はそれぞれの
-# apps/<slug>.html が使っている基調色そのものを転記している。トップと遷移先で
-# 色が食い違わないように、ここだけ見て変えず、まず個別ページ側の色を変えてから
-# 合わせること。
-# 一言はApp Storeの説明文から機械的に切り出さず、一覧で並べたとき違いが分かる長さで書く。
+# 各アプリの一言。カードは色を持たない均質なリストなので、ここは文言だけ。
+# App Storeの説明文から機械的に切り出さず、一覧で並べたとき違いが分かる長さで書く。
 CARDS = {
-    "replay":        ("覚えた曲を、忘れないために。", "#9a6b3f"),
-    "homekarte":     ("家族の体調を、そっと記録する。", "#b4653a"),
-    "taptaptown":    ("ぺたっと置いて、街が動きだす。", "#ff8a5b"),
-    "average100":    ("入力するだけで、平均が出る。", "#7c8cff"),
-    "kanji":         ("さわって、きいて、漢字を覚える。", "#58cc02"),
-    "hiragana":      ("ひらがなに、はじめてふれる日に。", "#b7412f"),
-    "katakana":      ("カタカナを、かたちから覚える。", "#e03127"),
-    "drawingciao":   ("むずかしい操作は、ぜんぶ捨てた。", "#ef7d57"),
-    "zengamentimer": ("画面いっぱいの、ただのタイマー。", "#ff6a3d"),
-    "lifecounter":   ("ライフ管理は、指一本で。", "#36d1dc"),
+    "replay":        "覚えた曲を、忘れないために。",
+    "homekarte":     "家族の体調を、そっと記録する。",
+    "taptaptown":    "ぺたっと置いて、街が動きだす。",
+    "average100":    "入力するだけで、平均が出る。",
+    "kanji":         "さわって、きいて、漢字を覚える。",
+    "hiragana":      "ひらがなに、はじめてふれる日に。",
+    "katakana":      "カタカナを、かたちから覚える。",
+    "drawingciao":   "むずかしい操作は、ぜんぶ捨てた。",
+    "zengamentimer": "画面いっぱいの、ただのタイマー。",
+    "lifecounter":   "ライフ管理は、指一本で。",
 }
 
 
@@ -50,10 +46,9 @@ def e(text: str) -> str:
 def build_index(apps: list[dict]) -> None:
     cards = []
     for a in apps:
-        tagline, accent = CARDS[a["slug"]]
+        tagline = CARDS[a["slug"]]
         cards.append(
-            f'      <a class="card" href="apps/{a["slug"]}.html"'
-            f' style="--accent-app:{accent}">\n'
+            f'      <a class="card" href="apps/{a["slug"]}.html">\n'
             f'        <img src="{a["icon"]}" alt="" width="72" height="72" loading="lazy">\n'
             f'        <span class="card-text">\n'
             f'          <span class="card-name">{e(a["name"].split(" - ")[0].split("　")[0])}</span>\n'
@@ -85,8 +80,7 @@ def build_index(apps: list[dict]) -> None:
 <main>
   <section class="hero wrap">
     <p class="hero-eyebrow">iPhone &amp; iPad</p>
-    <h1>ちいさな道具を、<br>ていねいに。</h1>
-    <p class="hero-lead">暮らしと学びのすきまを埋めるアプリを、{len(apps)}本つくっています。</p>
+    <!-- キャッチコピー（見出しとリード文）は検討中。決まるまで空欄にする。 -->
   </section>
 
   <section class="wrap">

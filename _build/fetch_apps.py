@@ -59,7 +59,7 @@ def download(url: str, dest: Path, max_px: int) -> None:
     args = ["sips", "-Z", str(max_px)]
     if dest.suffix == ".jpg":
         # 端末画像は大きいままだと1ページ数MBになる。JPEGへ落として軽くする。
-        args += ["-s", "format", "jpeg", "-s", "formatOptions", "72"]
+        args += ["-s", "format", "jpeg", "-s", "formatOptions", "90"]
     subprocess.run(args + [str(dest)], check=True, capture_output=True)
 
 

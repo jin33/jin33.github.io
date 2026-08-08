@@ -14,6 +14,13 @@
   --sumi: #2b2622;
   --sumi-soft: #726a5e;
   --shu: #b7412f;
+  /* 実機の五十音表アプリで実際に使われている5色。段（あかさたな…）ごとに
+     この順で繰り返す。実物のスクリーンショットから採取した色。 */
+  --k-red: #d6402a;
+  --k-blue: #2166ab;
+  --k-green: #4f6f3f;
+  --k-gold: #caa020;
+  --k-brown: #7c4a12;
 }
 * { box-sizing: border-box; }
 body {
@@ -61,17 +68,31 @@ a { color: inherit; }
 
 .rule { height: 1px; background: rgba(43, 38, 34, 0.14); margin: 0 1.5rem; }
 
+/* 実機のひらがなボードは、行（あいうえお）を縦に並べ、段（あかさたなは…）を
+   右から左へ配置する組み方になっている。横書きの単純な五十音順グリッドとは
+   別物なので、そのまま再現する。列ごとに実機と同じ5色を繰り返す。
+   375px幅では11列がぎりぎりのため、横スクロールできる帯に収める。 */
+.gojuon-scroll { overflow-x: auto; padding-block: 3.5rem; }
 .gojuon {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;
-  /* max-width が iPhone の画面幅に近いので、左右余白は padding で確保する。
-     margin auto だけだと 375px 幅で文字が画面端に貼りつく。 */
-  max-width: calc(380px + 3rem); margin: 3.5rem auto; padding-inline: 1.5rem;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  gap: 0.4rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
-.gojuon span {
-  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
-  background: var(--washi-deep); border-radius: 3px; font-size: 1.35rem;
+.gojuon .col { display: flex; flex-direction: column; gap: 0.3rem; }
+.gojuon .col span {
+  width: 2.15rem; height: 2.15rem;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--washi-deep); border-radius: 3px;
+  font-size: 1.1rem; font-weight: 600;
 }
-.gojuon span:nth-child(5n+1) { color: var(--shu); }
+.gojuon .col span.blank { background: none; }
+.gojuon .c-red span { color: var(--k-red); }
+.gojuon .c-blue span { color: var(--k-blue); }
+.gojuon .c-green span { color: var(--k-green); }
+.gojuon .c-gold span { color: var(--k-gold); }
+.gojuon .c-brown span { color: var(--k-brown); }
 
 .shots { display: flex; gap: 1.5rem; justify-content: safe center; overflow-x: auto; padding: 1rem 1.5rem 4rem; }
 .shots img { height: 470px; border-radius: 18px; flex: none; box-shadow: 0 14px 36px rgba(43, 38, 34, 0.18); }
@@ -114,12 +135,20 @@ a { color: inherit; }
 
 <div class="rule"></div>
 
-<div class="gojuon" aria-hidden="true">
-  <span>あ</span><span>い</span><span>う</span><span>え</span><span>お</span>
-  <span>か</span><span>き</span><span>く</span><span>け</span><span>こ</span>
-  <span>さ</span><span>し</span><span>す</span><span>せ</span><span>そ</span>
-  <span>た</span><span>ち</span><span>つ</span><span>て</span><span>と</span>
-  <span>な</span><span>に</span><span>ぬ</span><span>ね</span><span>の</span>
+<div class="gojuon-scroll">
+  <div class="gojuon" aria-hidden="true">
+    <div class="col c-red"><span>あ</span><span>い</span><span>う</span><span>え</span><span>お</span></div>
+    <div class="col c-blue"><span>か</span><span>き</span><span>く</span><span>け</span><span>こ</span></div>
+    <div class="col c-green"><span>さ</span><span>し</span><span>す</span><span>せ</span><span>そ</span></div>
+    <div class="col c-gold"><span>た</span><span>ち</span><span>つ</span><span>て</span><span>と</span></div>
+    <div class="col c-brown"><span>な</span><span>に</span><span>ぬ</span><span>ね</span><span>の</span></div>
+    <div class="col c-red"><span>は</span><span>ひ</span><span>ふ</span><span>へ</span><span>ほ</span></div>
+    <div class="col c-blue"><span>ま</span><span>み</span><span>む</span><span>め</span><span>も</span></div>
+    <div class="col c-green"><span>や</span><span class="blank"></span><span>ゆ</span><span class="blank"></span><span>よ</span></div>
+    <div class="col c-gold"><span>ら</span><span>り</span><span>る</span><span>れ</span><span>ろ</span></div>
+    <div class="col c-brown"><span>わ</span><span>を</span><span class="blank"></span><span class="blank"></span><span>ん</span></div>
+    <div class="col c-red"><span>ゃ</span><span>っ</span><span>ゅ</span><span>ー</span><span>ょ</span></div>
+  </div>
 </div>
 
 <div class="shots">

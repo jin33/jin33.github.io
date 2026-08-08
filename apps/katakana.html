@@ -13,6 +13,13 @@
   --ink: #1a1a1a;
   --red: #e03127;
   --line: rgba(26, 26, 26, 0.16);
+  /* 実機の五十音表アプリで実際に使われている5色。段（アカサタナ…）ごとに
+     この順で繰り返す。ページ自体は赤・黒・白のスイス調で組んでいるが、
+     表の中だけは実物と同じ配色にして、実機との対応が一目でわかるようにする。 */
+  --k-blue: #2166ab;
+  --k-green: #4f6f3f;
+  --k-gold: #caa020;
+  --k-brown: #7c4a12;
 }
 * { box-sizing: border-box; }
 body {
@@ -63,13 +70,29 @@ a { color: inherit; }
 }
 .cta:hover { background: var(--ink); }
 
-.grid50 { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.grid50 span {
-  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
-  border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
-  font-size: 1.4rem; font-weight: 600;
+/* 実機のカタカナボードは、行（アイウエオ）を縦に並べ、段（アカサタナハ…）を
+   右から左へ配置する組み方になっている。以前のこのページは単純な五十音順の
+   横書きグリッドで、実機とは違う並びだった。枠線はページ全体のスイス調グリッド
+   に合わせ、文字色だけ実機と同じ5色を段ごとに繰り返す。 */
+.grid50-scroll { overflow-x: auto; }
+.grid50 {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
 }
-.grid50 span:nth-child(5n+1) { background: var(--red); color: #fff; }
+.grid50 .col { display: flex; flex-direction: column; }
+.grid50 .col span {
+  width: 2.6rem; height: 2.6rem;
+  display: flex; align-items: center; justify-content: center;
+  border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  font-size: 1.3rem; font-weight: 700;
+}
+.grid50 .c-red span { color: var(--red); }
+.grid50 .c-blue span { color: var(--k-blue); }
+.grid50 .c-green span { color: var(--k-green); }
+.grid50 .c-gold span { color: var(--k-gold); }
+.grid50 .c-brown span { color: var(--k-brown); }
 
 .shots { display: flex; gap: 0; border-top: 2px solid var(--ink); }
 .shots img { width: 50%; height: auto; display: block; }
@@ -115,12 +138,19 @@ a { color: inherit; }
     <p>操作はタッチだけ。設定も保存もありません。カタカナに興味を持ちはじめたお子さまに。</p>
     <a class="cta" href="https://apps.apple.com/jp/app/id783514541">App Store</a>
   </div>
-  <div>
+  <div class="grid50-scroll">
     <div class="grid50" aria-hidden="true">
-      <span>ア</span><span>イ</span><span>ウ</span><span>エ</span><span>オ</span>
-      <span>カ</span><span>キ</span><span>ク</span><span>ケ</span><span>コ</span>
-      <span>サ</span><span>シ</span><span>ス</span><span>セ</span><span>ソ</span>
-      <span>タ</span><span>チ</span><span>ツ</span><span>テ</span><span>ト</span>
+      <div class="col c-red"><span>ア</span><span>イ</span><span>ウ</span><span>エ</span><span>オ</span></div>
+      <div class="col c-blue"><span>カ</span><span>キ</span><span>ク</span><span>ケ</span><span>コ</span></div>
+      <div class="col c-green"><span>サ</span><span>シ</span><span>ス</span><span>セ</span><span>ソ</span></div>
+      <div class="col c-gold"><span>タ</span><span>チ</span><span>ツ</span><span>テ</span><span>ト</span></div>
+      <div class="col c-brown"><span>ナ</span><span>ニ</span><span>ヌ</span><span>ネ</span><span>ノ</span></div>
+      <div class="col c-red"><span>ハ</span><span>ヒ</span><span>フ</span><span>ヘ</span><span>ホ</span></div>
+      <div class="col c-blue"><span>マ</span><span>ミ</span><span>ム</span><span>メ</span><span>モ</span></div>
+      <div class="col c-green"><span>ヤ</span><span></span><span>ユ</span><span></span><span>ヨ</span></div>
+      <div class="col c-gold"><span>ラ</span><span>リ</span><span>ル</span><span>レ</span><span>ロ</span></div>
+      <div class="col c-brown"><span>ワ</span><span>ヲ</span><span></span><span></span><span>ン</span></div>
+      <div class="col c-red"><span>ャ</span><span>ッ</span><span>ュ</span><span>ー</span><span>ョ</span></div>
     </div>
   </div>
 </section>
