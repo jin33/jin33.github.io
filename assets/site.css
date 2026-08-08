@@ -10,6 +10,7 @@
   --fg-muted: #6b6b73;
   --line: rgba(0, 0, 0, 0.1);
   --accent: #0071e3;
+  --surface: #f5f5f7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,6 +20,7 @@
     --fg-muted: #9a9aa2;
     --line: rgba(255, 255, 255, 0.14);
     --accent: #2997ff;
+    --surface: #18181b;
   }
 }
 
@@ -81,10 +83,12 @@ a { color: inherit; }
 
 .hero-eyebrow {
   margin: 0 0 1rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 650;
+  /* "iPhone & iPad" は固有の大文字小文字がある表記なので、ラベルらしさは
+     letter-spacing だけで出す。text-transform: uppercase は使わない
+     （"IPHONE & IPAD" は誤表記になる）。 */
+  letter-spacing: 0.02em;
   color: var(--fg-muted);
 }
 
@@ -115,26 +119,49 @@ a { color: inherit; }
   padding-bottom: 6rem;
 }
 
+/* カード自体の地色はテーマ共通の --surface に統一する。以前はアプリごとの
+   基調色をカード全面に敷いていたが、10枚並ぶと統一感がなく騒がしかった。
+   各アプリの色は、左端のバー・アイコンの影・矢印の3点にだけ残し、遷移先
+   ページの配色との繋がりを保ちつつ、一覧としては1枚のグリッドに見せる。 */
 .card {
+  --tint: var(--accent-app, var(--accent));
+
+  position: relative;
   display: flex;
   align-items: center;
   gap: 1.1rem;
-  padding: 1.4rem;
+  padding: 1.4rem 1.4rem 1.4rem 1.7rem;
   border-radius: 22px;
+  overflow: hidden;
   text-decoration: none;
-  background: var(--card-bg);
-  color: var(--card-fg);
-  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.3s ease;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--fg);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover { transform: translateY(-4px); filter: brightness(1.04); }
+.card::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 4px;
+  background: var(--tint);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--tint);
+  box-shadow: 0 10px 28px -12px var(--tint);
+}
 
 .card img {
   width: 72px;
   height: 72px;
   border-radius: 17px;
   flex: none;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 4px 16px -4px var(--tint);
 }
 
 .card-text { flex: 1; min-width: 0; }
@@ -149,11 +176,11 @@ a { color: inherit; }
 .card-tag {
   display: block;
   font-size: 0.88rem;
-  opacity: 0.68;
+  color: var(--fg-muted);
   line-height: 1.5;
 }
 
-.card-arrow { width: 16px; height: 16px; flex: none; opacity: 0.4; }
+.card-arrow { width: 16px; height: 16px; flex: none; color: var(--tint); opacity: 0.75; }
 
 /* ---- privacy policy ---- */
 

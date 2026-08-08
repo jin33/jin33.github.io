@@ -23,19 +23,23 @@ DATA = Path(__file__).resolve().parent / "appstore.json"
 FACEBOOK = "https://www.facebook.com/pages/Holy-inc-Apps/136263789773255"
 DEVELOPER = "https://apps.apple.com/jp/developer/holy-inc/id359389894"
 
-# 各アプリの一言と、カードの地色。地色は個別ページの基調色と合わせてある。
+# 各アプリの一言と、アクセント色。カード自体の地色は共通（site.css の --surface）で、
+# ここで指定する色は左端のバー・アイコンの影・矢印にだけ使う。値はそれぞれの
+# apps/<slug>.html が使っている基調色そのものを転記している。トップと遷移先で
+# 色が食い違わないように、ここだけ見て変えず、まず個別ページ側の色を変えてから
+# 合わせること。
 # 一言はApp Storeの説明文から機械的に切り出さず、一覧で並べたとき違いが分かる長さで書く。
 CARDS = {
-    "replay":        ("覚えた曲を、忘れないために。", "#f2f0ec", "#2b2a28"),
-    "homekarte":     ("家族の体調を、そっと記録する。", "#f7f1e8", "#3a2f24"),
-    "taptaptown":    ("ぺたっと置いて、街が動きだす。", "#e8f4ff", "#12395e"),
-    "average100":    ("入力するだけで、平均が出る。", "#1c1c1f", "#f4f4f6"),
-    "kanji":         ("さわって、きいて、漢字を覚える。", "#fff4e0", "#7a3d00"),
-    "hiragana":      ("ひらがなに、はじめてふれる日に。", "#f6f1e7", "#7c2d2d"),
-    "katakana":      ("カタカナを、かたちから覚える。", "#f2f2f0", "#1a1a1a"),
-    "drawingciao":   ("むずかしい操作は、ぜんぶ捨てた。", "#fdf6ee", "#5a4632"),
-    "zengamentimer": ("画面いっぱいの、ただのタイマー。", "#0a0a0a", "#f0f0f0"),
-    "lifecounter":   ("ライフ管理は、指一本で。", "#141821", "#e8f0ff"),
+    "replay":        ("覚えた曲を、忘れないために。", "#9a6b3f"),
+    "homekarte":     ("家族の体調を、そっと記録する。", "#b4653a"),
+    "taptaptown":    ("ぺたっと置いて、街が動きだす。", "#ff8a5b"),
+    "average100":    ("入力するだけで、平均が出る。", "#7c8cff"),
+    "kanji":         ("さわって、きいて、漢字を覚える。", "#58cc02"),
+    "hiragana":      ("ひらがなに、はじめてふれる日に。", "#b7412f"),
+    "katakana":      ("カタカナを、かたちから覚える。", "#e03127"),
+    "drawingciao":   ("むずかしい操作は、ぜんぶ捨てた。", "#ef7d57"),
+    "zengamentimer": ("画面いっぱいの、ただのタイマー。", "#ff6a3d"),
+    "lifecounter":   ("ライフ管理は、指一本で。", "#36d1dc"),
 }
 
 
@@ -46,10 +50,10 @@ def e(text: str) -> str:
 def build_index(apps: list[dict]) -> None:
     cards = []
     for a in apps:
-        tagline, bg, fg = CARDS[a["slug"]]
+        tagline, accent = CARDS[a["slug"]]
         cards.append(
             f'      <a class="card" href="apps/{a["slug"]}.html"'
-            f' style="--card-bg:{bg};--card-fg:{fg}">\n'
+            f' style="--accent-app:{accent}">\n'
             f'        <img src="{a["icon"]}" alt="" width="72" height="72" loading="lazy">\n'
             f'        <span class="card-text">\n'
             f'          <span class="card-name">{e(a["name"].split(" - ")[0].split("　")[0])}</span>\n'
