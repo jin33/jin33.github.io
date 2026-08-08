@@ -6,7 +6,10 @@
 <title>平仮名ボード | Holy App</title>
 <meta name="description" content="さわると声が出る、ひらがなの50音表アプリ。">
 <!-- 参考: 和の縦組みポスター（新潮社・岩波の書影まわり）。和紙色、朱、縦書き見出し、余白。
-     漢字ボードと同じ系列だが、ひらがな＝日本語のはじまりなので、あえて静かな和で分ける。 -->
+     漢字ボードと同じ系列だが、ひらがな＝日本語のはじまりなので、あえて静かな和で分ける。
+     五十音表そのものは自作せず、実機の高解像度スクリーンショットに語らせる。
+     自前で作った表は右から左への段組みを再現しても見た目が安っぽくなり、
+     置き場所も宙に浮いた別ブロックになってしまったため。 -->
 <style>
 :root {
   --washi: #f6f1e7;
@@ -36,13 +39,13 @@ a { color: inherit; }
 
 .hero { padding-block: 4.5rem 3rem; display: flex; gap: 2.5rem; align-items: center; justify-content: center; flex-wrap: wrap; }
 
-/* 見出しだけ縦組みにして、和の骨格を1か所で立てる */
+/* 見出しだけ縦組みにして、和の骨格を1か所で立てる。
+   改行位置は自動折り返しに任せず、読点ごとに明示して意図した位置で切る。 */
 .tate {
   writing-mode: vertical-rl;
   font-size: clamp(1.9rem, 6vw, 2.9rem);
   letter-spacing: 0.28em;
-  line-height: 1.5;
-  height: 12rem;
+  line-height: 1.7;
   font-weight: 500;
 }
 .tate .accent { color: var(--shu); }
@@ -61,30 +64,7 @@ a { color: inherit; }
 
 .rule { height: 1px; background: rgba(43, 38, 34, 0.14); margin: 0 1.5rem; }
 
-/* 実機のひらがなボードは、行（あいうえお）を縦に並べ、段（あかさたなは…）を
-   右から左へ配置する組み方になっている。横書きの単純な五十音順グリッドとは
-   別物なので、並び順だけそのまま再現する。見た目はこのページ本来の、
-   washi地に朱を一色差すだけの静かな組み方に合わせた。
-   375px幅では11列がぎりぎりのため、横スクロールできる帯に収める。 */
-.gojuon-scroll { overflow-x: auto; padding-block: 3.5rem; }
-.gojuon {
-  display: inline-flex;
-  flex-direction: row-reverse;
-  gap: 0.6rem;
-  margin-inline: auto;
-  padding-inline: 1.5rem;
-}
-.gojuon .col { display: flex; flex-direction: column; gap: 0.5rem; }
-.gojuon .col span {
-  width: 2.8rem; height: 2.8rem;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--washi-deep); border-radius: 3px;
-  font-size: 1.35rem;
-}
-.gojuon .col span.blank { background: none; }
-.gojuon .col.accent span { color: var(--shu); }
-
-.shots { display: flex; gap: 1.5rem; justify-content: safe center; overflow-x: auto; padding: 1rem 1.5rem 4rem; }
+.shots { display: flex; gap: 1.5rem; justify-content: safe center; overflow-x: auto; padding: 3.5rem 1.5rem 4rem; }
 .shots img { height: 470px; border-radius: 18px; flex: none; box-shadow: 0 14px 36px rgba(43, 38, 34, 0.18); }
 
 .band { background: var(--washi-deep); padding: 4rem 0; }
@@ -99,7 +79,6 @@ a { color: inherit; }
 .foot p { margin: 0.4rem 0; }
 
 @media (max-width: 600px) {
-  .tate { height: 9rem; font-size: 1.7rem; }
   .shots img { height: 360px; }
 }
 .shots::after { content: ""; flex: 0 0 0.5rem; }
@@ -115,7 +94,7 @@ a { color: inherit; }
 </nav>
 
 <header class="hero wrap">
-  <h1 class="tate">さわって、あそんで、<span class="accent">おぼえる</span>。</h1>
+  <h1 class="tate">さわって、<br>あそんで、<br><span class="accent">おぼえる</span>。</h1>
   <div class="hero-side">
     <img src="../assets/icons/hiragana.png" alt="" width="88" height="88">
     <p>ひらがなの50音表。文字を押すと声が流れます。ひらがなに興味を持ちはじめたお子さまに。</p>
@@ -124,22 +103,6 @@ a { color: inherit; }
 </header>
 
 <div class="rule"></div>
-
-<div class="gojuon-scroll">
-  <div class="gojuon" aria-hidden="true">
-    <div class="col accent"><span>あ</span><span>い</span><span>う</span><span>え</span><span>お</span></div>
-    <div class="col"><span>か</span><span>き</span><span>く</span><span>け</span><span>こ</span></div>
-    <div class="col"><span>さ</span><span>し</span><span>す</span><span>せ</span><span>そ</span></div>
-    <div class="col"><span>た</span><span>ち</span><span>つ</span><span>て</span><span>と</span></div>
-    <div class="col"><span>な</span><span>に</span><span>ぬ</span><span>ね</span><span>の</span></div>
-    <div class="col"><span>は</span><span>ひ</span><span>ふ</span><span>へ</span><span>ほ</span></div>
-    <div class="col"><span>ま</span><span>み</span><span>む</span><span>め</span><span>も</span></div>
-    <div class="col"><span>や</span><span class="blank"></span><span>ゆ</span><span class="blank"></span><span>よ</span></div>
-    <div class="col"><span>ら</span><span>り</span><span>る</span><span>れ</span><span>ろ</span></div>
-    <div class="col"><span>わ</span><span>を</span><span class="blank"></span><span class="blank"></span><span>ん</span></div>
-    <div class="col"><span>ゃ</span><span>っ</span><span>ゅ</span><span>ー</span><span>ょ</span></div>
-  </div>
-</div>
 
 <div class="shots">
   <img src="../assets/shots/hiragana-1.jpg" alt="50音表の画面" loading="lazy">

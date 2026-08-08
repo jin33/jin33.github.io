@@ -34,7 +34,7 @@ CARDS = {
     "hiragana":      "ひらがなに、はじめてふれる日に。",
     "katakana":      "カタカナを、かたちから覚える。",
     "drawingciao":   "むずかしい操作は、ぜんぶ捨てた。",
-    "zengamentimer": "画面いっぱいの、ただのタイマー。",
+    "zengamentimer": "遠くからでも、ひと目でわかる。",
     "lifecounter":   "ライフ管理は、指一本で。",
 }
 
