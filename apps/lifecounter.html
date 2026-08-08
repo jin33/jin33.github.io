@@ -5,23 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>バディライフ | Holy App</title>
 <meta name="description" content="バディファイト用のライフカウンター。指一本でライフを増減できます。">
-<!-- 参考: Tapbots のダーク＋ネオンと、対戦ゲームのHUD。
-     卓上で相手と向き合って使う道具なので、画面が締まって見える暗い配色にした。 -->
+<!-- 参考: Tapbots のダーク基調と、対戦ゲームのHUD。
+     卓上で相手と向き合って使う道具なので、画面が締まって見える暗い配色にした。
+     色は汎用のネオンではなく、実機の画面（黒い盤面に対戦者ごとのオレンジと
+     水色の2枚パネル）とアイコンの赤から採った。対戦相手2人ぶんの色を持つのが
+     このアプリの見た目の核なので、その2色を軸に組み直した。 -->
 <style>
 :root {
-  --bg: #141821;
-  --panel: #1c2230;
-  --fg: #e8f0ff;
-  --fg-soft: #8b96ad;
-  --line: rgba(232, 240, 255, 0.12);
-  --neon: #36d1dc;
-  --neon-2: #ff4d6d;
+  --bg: #050505;
+  --panel: #131313;
+  --fg: #f2f2f2;
+  --fg-soft: #8f8f93;
+  --line: rgba(242, 242, 242, 0.12);
+  --p1: #f4a361;
+  --p2: #00bffe;
+  --brand-red: #e60912;
 }
 * { box-sizing: border-box; }
 body {
   margin: 0;
   background:
-    radial-gradient(900px 500px at 50% -10%, rgba(54, 209, 220, 0.16), transparent 65%),
+    radial-gradient(700px 420px at 10% -8%, rgba(244, 163, 97, 0.16), transparent 60%),
+    radial-gradient(700px 420px at 90% -8%, rgba(0, 191, 254, 0.16), transparent 60%),
     var(--bg);
   color: var(--fg);
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
@@ -37,7 +42,7 @@ a { color: inherit; }
 .nav .home { color: var(--fg-soft); }
 
 .hero { padding-block: 4rem 2.5rem; text-align: center; }
-.hero img.icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 0 40px rgba(54, 209, 220, 0.35); }
+.hero img.icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 0 40px rgba(230, 9, 18, 0.35); }
 .hero h1 {
   margin: 1.5rem 0 0.6rem;
   font-size: clamp(2.1rem, 6.5vw, 3.2rem);
@@ -47,12 +52,19 @@ a { color: inherit; }
 .cta {
   display: inline-block; margin-top: 1.75rem;
   padding: 0.7rem 1.9rem; border-radius: 999px;
-  background: linear-gradient(135deg, var(--neon), #5b8cff);
-  color: #06121a; font-weight: 700; font-size: 0.92rem; text-decoration: none;
-  box-shadow: 0 8px 26px rgba(54, 209, 220, 0.3);
+  background: linear-gradient(90deg, var(--p1), var(--p2));
+  color: #0a0a0a; font-weight: 700; font-size: 0.92rem; text-decoration: none;
+  box-shadow: 0 8px 26px rgba(0, 191, 254, 0.22);
   transition: transform 0.2s ease;
 }
 .cta:hover { transform: translateY(-2px); }
+
+/* 実機の対戦画面そのものを、色だけで再現する。文章で「2色ある」と
+   説明するより、この帯を見せるほうが速い。 */
+.duo { display: flex; height: 64px; border-radius: 16px; overflow: hidden; margin: 2rem auto 0; max-width: 360px; }
+.duo span { flex: 1; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: #0a0a0a; }
+.duo .p1 { background: var(--p1); }
+.duo .p2 { background: var(--p2); }
 
 /* 起点ライフを一発で変えられるのがこのアプリの肝なので、そこだけ大きく出す */
 .presets { padding-block: 3.5rem 1rem; }
@@ -65,7 +77,7 @@ a { color: inherit; }
   font-variant-numeric: tabular-nums;
   font-size: 1.5rem; font-weight: 600;
 }
-.preset.main { border-color: var(--neon); color: var(--neon); box-shadow: 0 0 20px rgba(54, 209, 220, 0.22); }
+.preset.main { border-color: var(--brand-red); color: var(--brand-red); box-shadow: 0 0 20px rgba(230, 9, 18, 0.2); }
 .preset small { display: block; font-family: inherit; font-size: 0.62rem; letter-spacing: 0.08em; color: var(--fg-soft); margin-top: 0.2rem; }
 
 .shots { display: flex; gap: 1.5rem; justify-content: safe center; overflow-x: auto; padding: 3.5rem 1.5rem; }
@@ -75,7 +87,7 @@ a { color: inherit; }
 .feature { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 1.6rem; }
 .feature h3 { margin: 0 0 0.3rem; font-size: 1rem; font-weight: 650; }
 .feature p { margin: 0; font-size: 0.9rem; color: var(--fg-soft); }
-.feature .tag { display: inline-block; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neon-2); margin-bottom: 0.6rem; }
+.feature .tag { display: inline-block; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand-red); margin-bottom: 0.6rem; }
 
 .notice { border-top: 1px solid var(--line); padding: 2.5rem 0; font-size: 0.85rem; color: var(--fg-soft); }
 .notice p { margin: 0.35rem 0; }
@@ -101,6 +113,7 @@ a { color: inherit; }
   <h1>ライフ管理は、<br>指一本で。</h1>
   <p class="sub">バディファイト専用のライフカウンター。初期ライフは10。かんたん操作で切り替えられます。</p>
   <a class="cta" href="https://apps.apple.com/jp/app/id1186784709">App Store で見る</a>
+  <div class="duo" aria-hidden="true"><span class="p1">Player1</span><span class="p2">Player2</span></div>
 </header>
 
 <section class="wrap presets">
