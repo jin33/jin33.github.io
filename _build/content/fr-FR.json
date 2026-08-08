@@ -1,0 +1,78 @@
+{
+  "lang": "fr",
+  "endonym": "Français",
+  "title": "Politique de confidentialité | RePlay Repertory",
+  "h1": "Politique de confidentialité",
+  "updated": "Dernière mise à jour : 8 août 2026",
+  "intro": "Holy App (« nous ») propose l'application iOS RePlay Repertory (l'« Application »). La présente politique explique comment les informations sont traitées dans l'Application.",
+  "sections": [
+    {
+      "h": "Informations que nous ne collectons pas",
+      "body": [
+        "<p>L'Application ne collecte aucune information permettant de vous identifier directement, telle que vos nom, adresse, numéro de téléphone, adresse e-mail ou date de naissance. Il n'existe ni inscription ni connexion à un compte.</p>"
+      ]
+    },
+    {
+      "h": "Contenus que vous créez dans l'Application",
+      "body": [
+        "<p>L'Application vous permet de créer et d'enregistrer des titres de morceaux, des images et PDF de partitions, des journaux de travail, des images de couverture ainsi que les réglages du métronome et de l'application.</p>",
+        "<p>Ces contenus sont stockés sur votre appareil et, si iCloud est activé, synchronisés entre vos propres appareils via la base de données privée iCloud d'Apple. Cette synchronisation se déroule entièrement au sein des services d'Apple et <strong>nous ne pouvons ni consulter, ni récupérer, ni conserver ces contenus</strong>.</p>",
+        "<p>Les informations conservées dans iCloud sont régies par la politique de confidentialité d'Apple. Si vous ne souhaitez pas de synchronisation, vous pouvez désactiver iCloud pour l'Application dans les Réglages iOS.</p>"
+      ]
+    },
+    {
+      "h": "Accès à l'appareil photo et aux photos",
+      "body": [
+        "<p>L'Application peut demander l'accès à votre appareil photo et à votre photothèque afin que vous puissiez photographier des partitions ou définir une image de couverture. Cet accès n'a lieu qu'avec votre autorisation et les images obtenues sont enregistrées uniquement sur votre appareil et dans votre propre iCloud, comme indiqué ci-dessus. Elles ne sont jamais transmises à nos serveurs.</p>"
+      ]
+    },
+    {
+      "h": "Publicité",
+      "body": [
+        "<p>L'Application affiche des bannières publicitaires via Google AdMob, fourni par Google LLC. AdMob peut collecter des identifiants publicitaires et des informations sur l'appareil afin de diffuser les annonces, de mesurer les impressions et de prévenir la fraude.</p>",
+        "<p>L'Application ne demande pas l'autorisation App Tracking Transparency. Dans les régions où Apple exige cette autorisation, l'identifiant publicitaire n'est donc pas utilisé pour vous suivre.</p>",
+        "<p>Dans les régions où le consentement est requis, notamment l'Espace économique européen, le Royaume-Uni et la Suisse, l'Application affiche un écran de consentement (Google User Messaging Platform) au premier lancement et diffuse les annonces conformément à votre choix.</p>",
+        "<ul><li>Politique de confidentialité de Google : <a href=\"https://policies.google.com/privacy\">policies.google.com/privacy</a></li><li>Utilisation des données par Google dans la publicité : <a href=\"https://policies.google.com/technologies/partner-sites\">policies.google.com/technologies/partner-sites</a></li></ul>"
+      ]
+    },
+    {
+      "h": "Analyse d'utilisation",
+      "body": [
+        "<p>Afin d'améliorer les fonctionnalités et de détecter les anomalies, l'Application utilise Firebase Analytics, fourni par Google LLC. Firebase Analytics peut collecter des données d'usage agrégées telles que le nombre de lancements et l'utilisation des écrans, ainsi que le modèle d'appareil, la version du système, la région approximative et des identifiants publicitaires ou d'appareil.</p>",
+        "<p>Ces données servent uniquement à des analyses statistiques. Nous ne les utilisons pas pour identifier des personnes.</p>",
+        "<ul><li>Confidentialité et sécurité de Firebase : <a href=\"https://firebase.google.com/support/privacy\">firebase.google.com/support/privacy</a></li></ul>"
+      ]
+    },
+    {
+      "h": "Communication à des tiers",
+      "body": [
+        "<p>En dehors des prestataires de publicité et d'analyse décrits ci-dessus, nous ne partageons ni ne vendons les informations collectées à des tiers, sauf lorsque la loi impose leur divulgation.</p>"
+      ]
+    },
+    {
+      "h": "Conservation et suppression",
+      "body": [
+        "<p>Les contenus que vous créez dans l'Application restent sur votre appareil et dans votre propre iCloud jusqu'à ce que vous les supprimiez. La suppression de l'Application efface les données stockées sur l'appareil. Les données synchronisées avec iCloud peuvent être effacées en supprimant les données iCloud de l'Application dans les Réglages iOS.</p>"
+      ]
+    },
+    {
+      "h": "Enfants",
+      "body": [
+        "<p>L'Application n'est pas destinée aux enfants de moins de 13 ans et nous ne collectons pas sciemment d'informations auprès d'enfants de moins de 13 ans.</p>"
+      ]
+    },
+    {
+      "h": "Modifications de la présente politique",
+      "body": [
+        "<p>Nous pouvons réviser la présente politique en cas d'évolution législative ou d'ajout de fonctionnalités. Le cas échéant, le texte mis à jour et la date de révision seront publiés sur cette page.</p>"
+      ]
+    },
+    {
+      "h": "Contact",
+      "body": [
+        "<p>Pour toute question sur la présente politique ou sur le traitement des informations dans l'Application, veuillez nous contacter.</p>",
+        "<p>Holy App<br><a href=\"https://www.facebook.com/pages/Holy-inc-Apps/136263789773255\">Page Facebook</a></p>"
+      ]
+    }
+  ]
+}

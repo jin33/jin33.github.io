@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>漢字ボード 1年生 | Holy App</title>
+<meta name="description" content="さわると声が出る、小学1年生のための漢字表アプリ。">
+<!-- 参考: Duolingo。明るい原色、丸み、押したくなる大きなボタン、太いゴシック。
+     未就学から小1が対象なので、読ませるより「さわれそう」に見せる。 -->
+<style>
+:root {
+  --cream: #fff4e0;
+  --ink: #4a2600;
+  --ink-soft: #8a6338;
+  --orange: #ff9500;
+  --green: #58cc02;
+  --blue: #1cb0f6;
+  --pink: #ff5f7e;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Maru Gothic ProN", "Hiragino Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { max-width: 880px; margin-inline: auto; padding-inline: 1.5rem; }
+
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 58px; }
+.nav a { text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+.nav .home { color: var(--ink-soft); }
+
+.hero { padding-block: 3.5rem 2.5rem; text-align: center; }
+.hero img.icon { width: 104px; height: 104px; border-radius: 24px; box-shadow: 0 10px 0 rgba(74, 38, 0, 0.12); }
+.hero h1 {
+  margin: 1.75rem 0 0.5rem;
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  font-weight: 800; letter-spacing: -0.02em; line-height: 1.25;
+}
+.hero .sub { margin: 0 auto; max-width: 24rem; color: var(--ink-soft); font-weight: 500; }
+
+.cta {
+  display: inline-block; margin-top: 2rem;
+  padding: 0.85rem 2.2rem; border-radius: 18px;
+  background: var(--green); color: #fff;
+  font-size: 1rem; font-weight: 800; letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 5px 0 #46a302;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.cta:active { transform: translateY(4px); box-shadow: 0 1px 0 #46a302; }
+
+/* さわると音が出るアプリなので、ページ上でも「押せる面」を先に見せる */
+.board {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.6rem;
+  max-width: 460px; margin: 3rem auto 0;
+}
+.board span {
+  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+  border-radius: 16px; background: #fff; font-size: 1.5rem; font-weight: 700;
+  box-shadow: 0 4px 0 rgba(74, 38, 0, 0.12);
+}
+.board span:nth-child(4n+1) { color: var(--orange); }
+.board span:nth-child(4n+2) { color: var(--blue); }
+.board span:nth-child(4n+3) { color: var(--green); }
+.board span:nth-child(4n)   { color: var(--pink); }
+
+.shots { display: flex; gap: 1.25rem; overflow-x: auto; padding: 3.5rem 1.5rem 4rem; scroll-snap-type: x mandatory; }
+.shots img { height: 460px; border-radius: 22px; flex: none; scroll-snap-align: center; box-shadow: 0 10px 30px rgba(74, 38, 0, 0.16); }
+
+.cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); padding-bottom: 3.5rem; }
+.cardbox { background: #fff; border-radius: 22px; padding: 1.6rem; box-shadow: 0 5px 0 rgba(74, 38, 0, 0.1); }
+.cardbox h2 { margin: 0 0 0.35rem; font-size: 1.05rem; font-weight: 800; }
+.cardbox p { margin: 0; font-size: 0.93rem; color: var(--ink-soft); }
+
+.example { background: #fff; border-radius: 26px; padding: 2.5rem 1.75rem; text-align: center; margin-bottom: 4rem; box-shadow: 0 5px 0 rgba(74, 38, 0, 0.1); }
+.example .row { font-size: clamp(1.2rem, 4vw, 1.6rem); font-weight: 700; }
+.example .row + .row { margin-top: 0.6rem; }
+.example .arrow { color: var(--orange); margin: 0 0.6rem; }
+.example .say { color: var(--blue); }
+.example .cap { margin: 1.25rem 0 0; font-size: 0.88rem; color: var(--ink-soft); font-weight: 500; }
+
+.foot { padding-block: 2rem 4rem; font-size: 0.85rem; color: var(--ink-soft); }
+.foot p { margin: 0.4rem 0; }
+
+@media (max-width: 600px) { .shots img { height: 360px; } .board { grid-template-columns: repeat(5, 1fr); } }
+.shots::after { content: ""; flex: 0 0 0.5rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="home" href="../">← Holy App</a>
+    <a href="https://apps.apple.com/jp/app/id1075683691">App Store</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <img class="icon" src="../assets/icons/kanji.png" alt="" width="104" height="104">
+  <h1>さわって、きいて、<br>おぼえちゃおう。</h1>
+  <p class="sub">小学1年生の漢字表。文字を押すと声が流れます。入学前のお子さまにも。</p>
+  <a class="cta" href="https://apps.apple.com/jp/app/id1075683691">App Store で見る</a>
+
+  <div class="board" aria-hidden="true">
+    <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+    <span>山</span><span>川</span><span>森</span><span>林</span><span>田</span><span>石</span>
+    <span>犬</span><span>虫</span><span>花</span><span>草</span><span>竹</span><span>糸</span>
+  </div>
+</header>
+
+<div class="shots">
+  <img src="../assets/shots/kanji-1.jpg" alt="漢字表の画面" loading="lazy">
+  <img src="../assets/shots/kanji-2.jpg" alt="文字を押して再生" loading="lazy">
+  <img src="../assets/shots/kanji-3.jpg" alt="単語の再生" loading="lazy">
+  <img src="../assets/shots/kanji-4.jpg" alt="入力画面" loading="lazy">
+  <img src="../assets/shots/kanji-5.jpg" alt="操作画面" loading="lazy">
+</div>
+
+<section class="wrap">
+  <div class="example">
+    <div class="row">森 <span class="arrow">▶</span> <span class="say">もり</span></div>
+    <div class="row">森林 <span class="arrow">▶</span> <span class="say">しんりん</span></div>
+    <p class="cap">1文字だけでなく、2文字以上の単語も正しく読み上げます。</p>
+  </div>
+
+  <div class="cards">
+    <div class="cardbox">
+      <h2>タッチで入力</h2>
+      <p>押した文字がそのまま入ります。キーボードは出てきません。</p>
+    </div>
+    <div class="cardbox">
+      <h2>タッチで再生</h2>
+      <p>入力した文字は再生ボタンで読み上げられます。</p>
+    </div>
+    <div class="cardbox">
+      <h2>むずかしい操作なし</h2>
+      <p>設定も保存も要りません。開いたらすぐ遊べます。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot wrap">
+  <p><a href="../">Holy App のアプリ一覧</a></p>
+  <p>&copy; 2026 Holy App</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>平仮名ボード | Holy App</title>
+<meta name="description" content="さわると声が出る、ひらがなの50音表アプリ。">
+<!-- 参考: 和の縦組みポスター（新潮社・岩波の書影まわり）。和紙色、朱、縦書き見出し、余白。
+     漢字ボードと同じ系列だが、ひらがな＝日本語のはじまりなので、あえて静かな和で分ける。 -->
+<style>
+:root {
+  --washi: #f6f1e7;
+  --washi-deep: #ebe3d4;
+  --sumi: #2b2622;
+  --sumi-soft: #726a5e;
+  --shu: #b7412f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--washi);
+  color: var(--sumi);
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", -apple-system, serif;
+  font-size: 17px;
+  line-height: 2;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { max-width: 860px; margin-inline: auto; padding-inline: 1.5rem; }
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif; }
+
+.nav { border-bottom: 1px solid rgba(43, 38, 34, 0.14); }
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+.nav a { text-decoration: none; font-size: 0.84rem; }
+.nav .home { color: var(--sumi-soft); }
+
+.hero { padding-block: 4.5rem 3rem; display: flex; gap: 2.5rem; align-items: center; justify-content: center; flex-wrap: wrap; }
+
+/* 見出しだけ縦組みにして、和の骨格を1か所で立てる */
+.tate {
+  writing-mode: vertical-rl;
+  font-size: clamp(1.9rem, 6vw, 2.9rem);
+  letter-spacing: 0.28em;
+  line-height: 1.5;
+  height: 12rem;
+  font-weight: 500;
+}
+.tate .accent { color: var(--shu); }
+
+.hero-side { max-width: 20rem; }
+.hero-side img { width: 88px; height: 88px; border-radius: 20px; box-shadow: 0 8px 24px rgba(43, 38, 34, 0.18); }
+.hero-side p { color: var(--sumi-soft); font-size: 0.98rem; }
+
+.cta {
+  display: inline-block; margin-top: 0.5rem;
+  padding: 0.55rem 1.5rem; border: 1px solid var(--shu); color: var(--shu);
+  border-radius: 2px; font-size: 0.88rem; text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.cta:hover { background: var(--shu); color: var(--washi); }
+
+.rule { height: 1px; background: rgba(43, 38, 34, 0.14); margin: 0 1.5rem; }
+
+.gojuon {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;
+  /* max-width が iPhone の画面幅に近いので、左右余白は padding で確保する。
+     margin auto だけだと 375px 幅で文字が画面端に貼りつく。 */
+  max-width: calc(380px + 3rem); margin: 3.5rem auto; padding-inline: 1.5rem;
+}
+.gojuon span {
+  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+  background: var(--washi-deep); border-radius: 3px; font-size: 1.35rem;
+}
+.gojuon span:nth-child(5n+1) { color: var(--shu); }
+
+.shots { display: flex; gap: 1.5rem; justify-content: safe center; overflow-x: auto; padding: 1rem 1.5rem 4rem; }
+.shots img { height: 470px; border-radius: 18px; flex: none; box-shadow: 0 14px 36px rgba(43, 38, 34, 0.18); }
+
+.band { background: var(--washi-deep); padding: 4rem 0; }
+.band p { margin: 0; font-size: clamp(1.15rem, 3.2vw, 1.5rem); letter-spacing: 0.06em; }
+
+.points { padding-block: 4rem 3rem; display: grid; gap: 2.25rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.point h2 { margin: 0 0 0.3rem; font-size: 1.05rem; font-weight: 500; letter-spacing: 0.06em; }
+.point h2::before { content: ""; display: block; width: 24px; height: 2px; background: var(--shu); margin-bottom: 0.75rem; }
+.point p { margin: 0; font-size: 0.93rem; color: var(--sumi-soft); line-height: 1.9; }
+
+.foot { border-top: 1px solid rgba(43, 38, 34, 0.14); padding-block: 2.5rem 4rem; font-size: 0.84rem; color: var(--sumi-soft); }
+.foot p { margin: 0.4rem 0; }
+
+@media (max-width: 600px) {
+  .tate { height: 9rem; font-size: 1.7rem; }
+  .shots img { height: 360px; }
+}
+.shots::after { content: ""; flex: 0 0 0.5rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="home sans" href="../">← Holy App</a>
+    <a class="sans" href="https://apps.apple.com/jp/app/id783511889">App Store</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <h1 class="tate">さわって、あそんで、<span class="accent">おぼえる</span>。</h1>
+  <div class="hero-side">
+    <img src="../assets/icons/hiragana.png" alt="" width="88" height="88">
+    <p>ひらがなの50音表。文字を押すと声が流れます。ひらがなに興味を持ちはじめたお子さまに。</p>
+    <a class="cta sans" href="https://apps.apple.com/jp/app/id783511889">App Store で見る</a>
+  </div>
+</header>
+
+<div class="rule"></div>
+
+<div class="gojuon" aria-hidden="true">
+  <span>あ</span><span>い</span><span>う</span><span>え</span><span>お</span>
+  <span>か</span><span>き</span><span>く</span><span>け</span><span>こ</span>
+  <span>さ</span><span>し</span><span>す</span><span>せ</span><span>そ</span>
+  <span>た</span><span>ち</span><span>つ</span><span>て</span><span>と</span>
+  <span>な</span><span>に</span><span>ぬ</span><span>ね</span><span>の</span>
+</div>
+
+<div class="shots">
+  <img src="../assets/shots/hiragana-1.jpg" alt="50音表の画面" loading="lazy">
+  <img src="../assets/shots/hiragana-2.jpg" alt="文字を押して再生" loading="lazy">
+</div>
+
+<section class="band">
+  <div class="wrap">
+    <p>タッチで入力、タッチで再生。<br>かんたんな操作だけで、ひらがな遊びができます。</p>
+  </div>
+</section>
+
+<section class="wrap points">
+  <div class="point">
+    <h2>押すと声が出る</h2>
+    <p>文字にふれるだけで読み上げます。読み方を教えなくても、自分で覚えていきます。</p>
+  </div>
+  <div class="point">
+    <h2>入力して再生する</h2>
+    <p>並べた文字は再生ボタンでまとめて読み上げられます。名前を打ってみるのも遊びになります。</p>
+  </div>
+  <div class="point">
+    <h2>設定がない</h2>
+    <p>開いたらすぐ使えます。保存もログインもありません。</p>
+  </div>
+</section>
+
+<footer class="foot wrap sans">
+  <p><a href="../">Holy App のアプリ一覧</a></p>
+  <p>&copy; 2026 Holy App</p>
+</footer>
+
+</body>
+</html>

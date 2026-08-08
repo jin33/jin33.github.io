@@ -1,0 +1,78 @@
+{
+  "lang": "id",
+  "endonym": "Bahasa Indonesia",
+  "title": "Kebijakan Privasi | RePlay Repertory",
+  "h1": "Kebijakan Privasi",
+  "updated": "Terakhir diperbarui: 8 Agustus 2026",
+  "intro": "Holy App (\"kami\") menyediakan aplikasi iOS RePlay Repertory (\"Aplikasi\"). Kebijakan ini menjelaskan bagaimana informasi ditangani di dalam Aplikasi.",
+  "sections": [
+    {
+      "h": "Informasi yang tidak kami kumpulkan",
+      "body": [
+        "<p>Aplikasi tidak mengumpulkan informasi yang secara langsung mengidentifikasi Anda, seperti nama, alamat, nomor telepon, alamat email, atau tanggal lahir. Tidak ada pendaftaran akun maupun proses masuk.</p>"
+      ]
+    },
+    {
+      "h": "Konten yang Anda buat di Aplikasi",
+      "body": [
+        "<p>Aplikasi memungkinkan Anda membuat dan menyimpan judul lagu, gambar dan PDF partitur, catatan latihan, gambar sampul, serta pengaturan metronom dan aplikasi.</p>",
+        "<p>Konten ini disimpan di perangkat Anda dan, jika iCloud diaktifkan, disinkronkan antar perangkat milik Anda sendiri melalui basis data privat iCloud dari Apple. Sinkronisasi ini sepenuhnya berlangsung di dalam layanan Apple, dan <strong>kami tidak dapat melihat, mengambil, atau menyimpan konten tersebut</strong>.</p>",
+        "<p>Informasi yang tersimpan di iCloud tunduk pada kebijakan privasi Apple. Jika Anda tidak menginginkan sinkronisasi, Anda dapat menonaktifkan iCloud untuk Aplikasi melalui Pengaturan iOS.</p>"
+      ]
+    },
+    {
+      "h": "Akses kamera dan foto",
+      "body": [
+        "<p>Aplikasi dapat meminta akses ke kamera dan pustaka foto agar Anda dapat memotret partitur atau menetapkan gambar sampul lagu. Akses hanya terjadi dengan izin Anda, dan gambar yang dihasilkan hanya disimpan di perangkat dan iCloud milik Anda sendiri sebagaimana dijelaskan di atas. Gambar tersebut tidak pernah dikirim ke server kami.</p>"
+      ]
+    },
+    {
+      "h": "Iklan",
+      "body": [
+        "<p>Aplikasi menampilkan iklan spanduk melalui Google AdMob dari Google LLC. AdMob dapat mengumpulkan pengenal iklan dan informasi perangkat untuk menayangkan iklan, mengukur tayangan, dan mencegah penipuan.</p>",
+        "<p>Aplikasi tidak meminta izin App Tracking Transparency. Karena itu, di wilayah yang mewajibkan izin tersebut oleh Apple, pengenal iklan tidak digunakan untuk melacak Anda.</p>",
+        "<p>Di wilayah yang mensyaratkan persetujuan, seperti Wilayah Ekonomi Eropa, Britania Raya, dan Swiss, Aplikasi menampilkan layar persetujuan (Google User Messaging Platform) pada peluncuran pertama dan menayangkan iklan sesuai pilihan Anda.</p>",
+        "<ul><li>Kebijakan Privasi Google: <a href=\"https://policies.google.com/privacy\">policies.google.com/privacy</a></li><li>Penggunaan data oleh Google dalam periklanan: <a href=\"https://policies.google.com/technologies/partner-sites\">policies.google.com/technologies/partner-sites</a></li></ul>"
+      ]
+    },
+    {
+      "h": "Analitik penggunaan",
+      "body": [
+        "<p>Untuk menyempurnakan fitur dan mengetahui masalah, Aplikasi menggunakan Firebase Analytics dari Google LLC. Firebase Analytics dapat mengumpulkan data penggunaan agregat seperti jumlah peluncuran dan penggunaan layar, beserta model perangkat, versi sistem operasi, perkiraan wilayah, serta pengenal iklan atau perangkat.</p>",
+        "<p>Data ini hanya digunakan untuk analisis statistik. Kami tidak menggunakannya untuk mengidentifikasi perorangan.</p>",
+        "<ul><li>Privasi dan keamanan Firebase: <a href=\"https://firebase.google.com/support/privacy\">firebase.google.com/support/privacy</a></li></ul>"
+      ]
+    },
+    {
+      "h": "Pembagian kepada pihak ketiga",
+      "body": [
+        "<p>Selain penyedia layanan iklan dan analitik yang dijelaskan di atas, kami tidak membagikan atau menjual informasi yang dikumpulkan kepada pihak ketiga, kecuali jika pengungkapan diwajibkan oleh hukum.</p>"
+      ]
+    },
+    {
+      "h": "Penyimpanan dan penghapusan",
+      "body": [
+        "<p>Konten yang Anda buat di Aplikasi tetap berada di perangkat dan iCloud milik Anda sendiri sampai Anda menghapusnya. Menghapus Aplikasi akan menghapus data yang tersimpan di perangkat. Data yang tersinkron ke iCloud dapat dihapus melalui penghapusan data iCloud Aplikasi di Pengaturan iOS.</p>"
+      ]
+    },
+    {
+      "h": "Anak-anak",
+      "body": [
+        "<p>Aplikasi tidak dirancang untuk anak di bawah 13 tahun, dan kami tidak dengan sengaja mengumpulkan informasi dari anak di bawah 13 tahun.</p>"
+      ]
+    },
+    {
+      "h": "Perubahan kebijakan ini",
+      "body": [
+        "<p>Kami dapat merevisi kebijakan ini seiring perubahan peraturan atau penambahan fitur pada Aplikasi. Bila hal itu terjadi, teks terbaru beserta tanggal revisinya akan kami muat di halaman ini.</p>"
+      ]
+    },
+    {
+      "h": "Kontak",
+      "body": [
+        "<p>Untuk pertanyaan mengenai kebijakan ini atau penanganan informasi di dalam Aplikasi, silakan hubungi kami.</p>",
+        "<p>Holy App<br><a href=\"https://www.facebook.com/pages/Holy-inc-Apps/136263789773255\">Halaman Facebook</a></p>"
+      ]
+    }
+  ]
+}

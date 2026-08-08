@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>おえかきっチャオ | Holy App</title>
+<meta name="description" content="小さな子どもが一人で使える、操作を捨てたお絵描きアプリ。">
+<!-- 参考: Excalidraw の手描きトーン＋紙のノート。クレヨン色、傾き、マスキングテープ。
+     「複雑な操作を全部なくした」がこのアプリの主張なので、整然とさせず紙の上の質感で見せる。 -->
+<style>
+:root {
+  --paper: #fdf6ee;
+  --ink: #4a3a28;
+  --ink-soft: #8a7660;
+  --crayon-1: #ef7d57;
+  --crayon-2: #4fb0c6;
+  --crayon-3: #f4b942;
+  --crayon-4: #7bbf6a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(74, 58, 40, 0.05) 1px, transparent 1px) 0 0 / 100% 34px,
+    var(--paper);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Maru Gothic ProN", "Hiragino Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { max-width: 840px; margin-inline: auto; padding-inline: 1.5rem; }
+
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 58px; }
+.nav a { text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+.nav .home { color: var(--ink-soft); }
+
+.hero { padding-block: 3.5rem 2rem; text-align: center; }
+.hero img.icon {
+  width: 100px; height: 100px; border-radius: 24px;
+  transform: rotate(-3deg);
+  box-shadow: 0 10px 26px rgba(74, 58, 40, 0.18);
+}
+.hero h1 {
+  margin: 1.75rem 0 0.75rem;
+  font-size: clamp(2.1rem, 7vw, 3.2rem);
+  font-weight: 800; letter-spacing: -0.02em; line-height: 1.25;
+}
+.hero h1 u {
+  text-decoration: none;
+  background: linear-gradient(transparent 62%, var(--crayon-3) 62%);
+  padding: 0 0.1em;
+}
+.hero .sub { margin: 0 auto; max-width: 25rem; color: var(--ink-soft); }
+
+.cta {
+  display: inline-block; margin-top: 1.75rem;
+  padding: 0.75rem 2rem; border-radius: 999px;
+  background: var(--crayon-1); color: #fff; font-weight: 700;
+  text-decoration: none; font-size: 0.95rem;
+  box-shadow: 0 6px 0 rgba(74, 58, 40, 0.18);
+  transform: rotate(-1deg);
+  transition: transform 0.15s ease;
+}
+.cta:hover { transform: rotate(1deg) translateY(-2px); }
+
+/* 「できなかったこと」を消し込みで見せる。文章で説明するより短い。 */
+.before {
+  max-width: 480px; margin: 3.5rem auto 0;
+  background: #fff; border-radius: 14px; padding: 1.75rem 1.75rem 1.5rem;
+  box-shadow: 0 8px 24px rgba(74, 58, 40, 0.12);
+  transform: rotate(-0.8deg);
+  position: relative;
+}
+.before::before {
+  content: ""; position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(-2deg);
+  width: 90px; height: 24px; background: rgba(244, 185, 66, 0.65); border-radius: 2px;
+}
+.before h2 { margin: 0 0 0.75rem; font-size: 0.95rem; color: var(--ink-soft); font-weight: 700; }
+.before ul { margin: 0; padding-left: 1.2rem; }
+.before li { text-decoration: line-through; text-decoration-color: var(--crayon-1); text-decoration-thickness: 2px; color: var(--ink-soft); }
+.before .after { margin: 1rem 0 0; font-weight: 700; color: var(--ink); text-decoration: none; }
+
+.shots { display: flex; gap: 1.75rem; justify-content: safe center; overflow-x: auto; padding: 3.5rem 1.5rem 3rem; }
+.shots img { height: 460px; border-radius: 20px; flex: none; box-shadow: 0 14px 34px rgba(74, 58, 40, 0.18); }
+.shots img:first-child { transform: rotate(-1.5deg); }
+.shots img:last-child { transform: rotate(1.5deg); }
+
+.cards { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); padding-bottom: 3.5rem; }
+.cardbox { background: #fff; border-radius: 18px; padding: 1.6rem; box-shadow: 0 6px 20px rgba(74, 58, 40, 0.1); }
+.cardbox .dot { width: 14px; height: 14px; border-radius: 50%; display: block; margin-bottom: 0.9rem; }
+.cardbox:nth-child(1) .dot { background: var(--crayon-1); }
+.cardbox:nth-child(2) .dot { background: var(--crayon-2); }
+.cardbox:nth-child(3) .dot { background: var(--crayon-4); }
+.cardbox h3 { margin: 0 0 0.3rem; font-size: 1.02rem; font-weight: 700; }
+.cardbox p { margin: 0; font-size: 0.93rem; color: var(--ink-soft); }
+
+.foot { padding-block: 2rem 4rem; font-size: 0.85rem; color: var(--ink-soft); }
+.foot p { margin: 0.4rem 0; }
+
+@media (max-width: 600px) { .shots img { height: 360px; } }
+.shots::after { content: ""; flex: 0 0 0.5rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="home" href="../">← Holy App</a>
+    <a href="https://apps.apple.com/jp/app/id720019222">App Store</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <img class="icon" src="../assets/icons/drawingciao.png" alt="" width="100" height="100">
+  <h1>むずかしい操作は、<br><u>ぜんぶ捨てた</u>。</h1>
+  <p class="sub">iPhone をさわりはじめたばかりの小さなお子さまが、一人でお絵描きできるアプリです。</p>
+  <a class="cta" href="https://apps.apple.com/jp/app/id720019222">App Store で見る</a>
+
+  <div class="before">
+    <h2>ふつうのペイントアプリだと……</h2>
+    <ul>
+      <li>ペンの変え方が分からない</li>
+      <li>新規作成のやり方が分からない</li>
+      <li>保存方法が分からない</li>
+    </ul>
+    <p class="after">このアプリなら、大丈夫。</p>
+  </div>
+</header>
+
+<div class="shots">
+  <img src="../assets/shots/drawingciao-1.jpg" alt="お絵描き画面" loading="lazy">
+  <img src="../assets/shots/drawingciao-2.jpg" alt="色を変えて描く" loading="lazy">
+</div>
+
+<section class="wrap">
+  <div class="cards">
+    <div class="cardbox">
+      <span class="dot"></span>
+      <h3>迷う場所がない</h3>
+      <p>画面に出ているものが全部です。隠れたメニューはありません。</p>
+    </div>
+    <div class="cardbox">
+      <span class="dot"></span>
+      <h3>すぐ覚えられる</h3>
+      <p>教えなくても、さわっているうちに使い方が分かります。</p>
+    </div>
+    <div class="cardbox">
+      <span class="dot"></span>
+      <h3>集中がとぎれない</h3>
+      <p>やりたいことの前に操作が立ちはだからないので、描くことに集中できます。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot wrap">
+  <p><a href="../">Holy App のアプリ一覧</a></p>
+  <p>&copy; 2026 Holy App</p>
+</footer>
+
+</body>
+</html>

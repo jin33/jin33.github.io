@@ -1,0 +1,78 @@
+{
+  "lang": "vi",
+  "endonym": "Tiếng Việt",
+  "title": "Chính sách quyền riêng tư | RePlay Repertory",
+  "h1": "Chính sách quyền riêng tư",
+  "updated": "Cập nhật lần cuối: ngày 8 tháng 8 năm 2026",
+  "intro": "Holy App (\"chúng tôi\") cung cấp ứng dụng iOS RePlay Repertory (\"Ứng dụng\"). Chính sách này giải thích cách thông tin được xử lý trong Ứng dụng.",
+  "sections": [
+    {
+      "h": "Thông tin chúng tôi không thu thập",
+      "body": [
+        "<p>Ứng dụng không thu thập thông tin nhận dạng trực tiếp bạn, như họ tên, địa chỉ, số điện thoại, địa chỉ email hay ngày sinh. Ứng dụng cũng không có chức năng đăng ký hoặc đăng nhập.</p>"
+      ]
+    },
+    {
+      "h": "Nội dung bạn tạo trong Ứng dụng",
+      "body": [
+        "<p>Ứng dụng cho phép bạn tạo và lưu tên bản nhạc, hình ảnh và tệp PDF bản nhạc, nhật ký luyện tập, ảnh bìa, cùng các thiết lập máy đếm nhịp và ứng dụng.</p>",
+        "<p>Nội dung này được lưu trên thiết bị của bạn và, khi bật iCloud, được đồng bộ giữa các thiết bị của chính bạn thông qua cơ sở dữ liệu riêng tư iCloud của Apple. Việc đồng bộ diễn ra hoàn toàn trong các dịch vụ của Apple, và <strong>chúng tôi không thể xem, truy xuất hay lưu trữ nội dung đó</strong>.</p>",
+        "<p>Thông tin lưu trên iCloud tuân theo chính sách quyền riêng tư của Apple. Nếu không muốn đồng bộ, bạn có thể tắt iCloud cho Ứng dụng trong phần Cài đặt của iOS.</p>"
+      ]
+    },
+    {
+      "h": "Quyền truy cập máy ảnh và ảnh",
+      "body": [
+        "<p>Ứng dụng có thể yêu cầu quyền truy cập máy ảnh và thư viện ảnh để bạn chụp bản nhạc hoặc đặt ảnh bìa cho bản nhạc. Việc truy cập chỉ diễn ra khi bạn cho phép, và ảnh thu được chỉ được lưu trên thiết bị và trong iCloud của chính bạn như mô tả ở trên. Chúng không bao giờ được gửi đến máy chủ của chúng tôi.</p>"
+      ]
+    },
+    {
+      "h": "Quảng cáo",
+      "body": [
+        "<p>Ứng dụng hiển thị quảng cáo dạng biểu ngữ thông qua Google AdMob do Google LLC cung cấp. AdMob có thể thu thập mã nhận dạng quảng cáo và thông tin thiết bị nhằm phân phối quảng cáo, đo lường số lần hiển thị và ngăn chặn gian lận.</p>",
+        "<p>Ứng dụng không yêu cầu quyền App Tracking Transparency. Do đó, tại những khu vực mà Apple bắt buộc quyền này, mã nhận dạng quảng cáo không được dùng để theo dõi bạn.</p>",
+        "<p>Tại những khu vực yêu cầu sự đồng ý, như Khu vực Kinh tế Châu Âu, Vương quốc Anh và Thụy Sĩ, Ứng dụng sẽ hiển thị màn hình đồng ý (Google User Messaging Platform) trong lần khởi chạy đầu tiên và phân phối quảng cáo theo lựa chọn của bạn.</p>",
+        "<ul><li>Chính sách quyền riêng tư của Google: <a href=\"https://policies.google.com/privacy\">policies.google.com/privacy</a></li><li>Cách Google sử dụng dữ liệu trong quảng cáo: <a href=\"https://policies.google.com/technologies/partner-sites\">policies.google.com/technologies/partner-sites</a></li></ul>"
+      ]
+    },
+    {
+      "h": "Phân tích mức sử dụng",
+      "body": [
+        "<p>Để cải thiện tính năng và phát hiện sự cố, Ứng dụng sử dụng Firebase Analytics do Google LLC cung cấp. Firebase Analytics có thể thu thập dữ liệu sử dụng tổng hợp như số lần khởi chạy và mức sử dụng màn hình, cùng với kiểu máy, phiên bản hệ điều hành, khu vực gần đúng và mã nhận dạng quảng cáo hoặc thiết bị.</p>",
+        "<p>Dữ liệu này chỉ dùng cho phân tích thống kê. Chúng tôi không dùng nó để nhận dạng cá nhân.</p>",
+        "<ul><li>Quyền riêng tư và bảo mật của Firebase: <a href=\"https://firebase.google.com/support/privacy\">firebase.google.com/support/privacy</a></li></ul>"
+      ]
+    },
+    {
+      "h": "Chia sẻ với bên thứ ba",
+      "body": [
+        "<p>Ngoài các nhà cung cấp dịch vụ quảng cáo và phân tích nêu trên, chúng tôi không chia sẻ hoặc bán thông tin đã thu thập cho bên thứ ba, trừ khi pháp luật yêu cầu tiết lộ.</p>"
+      ]
+    },
+    {
+      "h": "Lưu giữ và xóa",
+      "body": [
+        "<p>Nội dung bạn tạo trong Ứng dụng vẫn nằm trên thiết bị và trong iCloud của chính bạn cho đến khi bạn xóa. Việc gỡ Ứng dụng sẽ xóa dữ liệu lưu trên thiết bị. Dữ liệu đã đồng bộ lên iCloud có thể được xóa bằng cách xóa dữ liệu iCloud của Ứng dụng trong phần Cài đặt của iOS.</p>"
+      ]
+    },
+    {
+      "h": "Trẻ em",
+      "body": [
+        "<p>Ứng dụng không được thiết kế cho trẻ em dưới 13 tuổi, và chúng tôi không cố ý thu thập thông tin từ trẻ em dưới 13 tuổi.</p>"
+      ]
+    },
+    {
+      "h": "Thay đổi chính sách",
+      "body": [
+        "<p>Chúng tôi có thể sửa đổi chính sách này khi pháp luật thay đổi hoặc khi Ứng dụng có thêm tính năng mới. Khi đó, nội dung cập nhật và ngày sửa đổi sẽ được đăng trên trang này.</p>"
+      ]
+    },
+    {
+      "h": "Liên hệ",
+      "body": [
+        "<p>Nếu có câu hỏi về chính sách này hoặc về cách xử lý thông tin trong Ứng dụng, vui lòng liên hệ với chúng tôi.</p>",
+        "<p>Holy App<br><a href=\"https://www.facebook.com/pages/Holy-inc-Apps/136263789773255\">Trang Facebook</a></p>"
+      ]
+    }
+  ]
+}

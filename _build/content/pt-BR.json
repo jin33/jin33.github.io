@@ -1,0 +1,78 @@
+{
+  "lang": "pt-BR",
+  "endonym": "Português (Brasil)",
+  "title": "Política de Privacidade | RePlay Repertory",
+  "h1": "Política de Privacidade",
+  "updated": "Última atualização: 8 de agosto de 2026",
+  "intro": "A Holy App (\"nós\") oferece o aplicativo para iOS RePlay Repertory (o \"App\"). Esta política explica como as informações são tratadas no App.",
+  "sections": [
+    {
+      "h": "Informações que não coletamos",
+      "body": [
+        "<p>O App não coleta informações que identifiquem você diretamente, como nome, endereço, telefone, e-mail ou data de nascimento. Não há cadastro nem login.</p>"
+      ]
+    },
+    {
+      "h": "Conteúdo criado por você no App",
+      "body": [
+        "<p>O App permite criar e salvar títulos de músicas, imagens e PDFs de partituras, registros de estudo, imagens de capa e ajustes do metrônomo e do aplicativo.</p>",
+        "<p>Esse conteúdo é armazenado no seu dispositivo e, quando o iCloud está ativado, sincronizado entre os seus próprios dispositivos por meio do banco de dados privado do iCloud da Apple. Essa sincronização ocorre inteiramente dentro dos serviços da Apple, e <strong>não podemos visualizar, obter nem armazenar esse conteúdo</strong>.</p>",
+        "<p>As informações mantidas no iCloud seguem a política de privacidade da Apple. Se preferir não sincronizar, você pode desativar o iCloud para o App nos Ajustes do iOS.</p>"
+      ]
+    },
+    {
+      "h": "Acesso à câmera e às fotos",
+      "body": [
+        "<p>O App pode solicitar acesso à câmera e à fototeca para que você registre partituras ou defina uma imagem de capa. O acesso só ocorre com a sua permissão, e as imagens resultantes são salvas apenas no seu dispositivo e no seu próprio iCloud, conforme descrito acima. Elas nunca são enviadas aos nossos servidores.</p>"
+      ]
+    },
+    {
+      "h": "Publicidade",
+      "body": [
+        "<p>O App exibe anúncios em banner por meio do Google AdMob, fornecido pela Google LLC. O AdMob pode coletar identificadores de publicidade e informações do dispositivo para veicular anúncios, medir impressões e prevenir fraudes.</p>",
+        "<p>O App não solicita a permissão do App Tracking Transparency. Portanto, nas regiões em que a Apple exige essa permissão, o identificador de publicidade não é usado para rastrear você.</p>",
+        "<p>Nas regiões em que o consentimento é exigido, como o Espaço Econômico Europeu, o Reino Unido e a Suíça, o App exibe uma tela de consentimento (Google User Messaging Platform) na primeira execução e veicula anúncios conforme a sua escolha.</p>",
+        "<ul><li>Política de Privacidade do Google: <a href=\"https://policies.google.com/privacy\">policies.google.com/privacy</a></li><li>Como o Google usa dados em publicidade: <a href=\"https://policies.google.com/technologies/partner-sites\">policies.google.com/technologies/partner-sites</a></li></ul>"
+      ]
+    },
+    {
+      "h": "Análise de uso",
+      "body": [
+        "<p>Para aprimorar recursos e identificar problemas, o App utiliza o Firebase Analytics, fornecido pela Google LLC. O Firebase Analytics pode coletar dados agregados de uso, como número de aberturas e uso de telas, além de modelo do dispositivo, versão do sistema, região aproximada e identificadores de publicidade ou de dispositivo.</p>",
+        "<p>Esses dados são usados apenas para análise estatística. Não os utilizamos para identificar pessoas.</p>",
+        "<ul><li>Privacidade e segurança do Firebase: <a href=\"https://firebase.google.com/support/privacy\">firebase.google.com/support/privacy</a></li></ul>"
+      ]
+    },
+    {
+      "h": "Compartilhamento com terceiros",
+      "body": [
+        "<p>Além dos provedores de publicidade e análise descritos acima, não compartilhamos nem vendemos as informações coletadas a terceiros, exceto quando a divulgação for exigida por lei.</p>"
+      ]
+    },
+    {
+      "h": "Retenção e exclusão",
+      "body": [
+        "<p>O conteúdo criado por você no App permanece no seu dispositivo e no seu próprio iCloud até que você o exclua. Remover o App apaga os dados guardados no dispositivo. Os dados sincronizados com o iCloud podem ser removidos excluindo os dados do iCloud do App nos Ajustes do iOS.</p>"
+      ]
+    },
+    {
+      "h": "Crianças",
+      "body": [
+        "<p>O App não é destinado a crianças menores de 13 anos, e não coletamos intencionalmente informações de crianças menores de 13 anos.</p>"
+      ]
+    },
+    {
+      "h": "Alterações nesta política",
+      "body": [
+        "<p>Podemos revisar esta política em razão de mudanças na legislação ou de novos recursos do App. Nesse caso, publicaremos o texto atualizado e a data de revisão nesta página.</p>"
+      ]
+    },
+    {
+      "h": "Contato",
+      "body": [
+        "<p>Em caso de dúvidas sobre esta política ou sobre o tratamento de informações no App, entre em contato conosco.</p>",
+        "<p>Holy App<br><a href=\"https://www.facebook.com/pages/Holy-inc-Apps/136263789773255\">Página no Facebook</a></p>"
+      ]
+    }
+  ]
+}

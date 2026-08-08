@@ -1,0 +1,78 @@
+{
+  "lang": "nl",
+  "endonym": "Nederlands",
+  "title": "Privacybeleid | RePlay Repertory",
+  "h1": "Privacybeleid",
+  "updated": "Laatst bijgewerkt: 8 augustus 2026",
+  "intro": "Holy App (\"wij\") biedt de iOS-app RePlay Repertory (de \"App\") aan. In dit beleid wordt uitgelegd hoe er in de App met gegevens wordt omgegaan.",
+  "sections": [
+    {
+      "h": "Gegevens die wij niet verzamelen",
+      "body": [
+        "<p>De App verzamelt geen gegevens waarmee u rechtstreeks kunt worden geïdentificeerd, zoals uw naam, adres, telefoonnummer, e-mailadres of geboortedatum. Er is geen registratie of aanmelding.</p>"
+      ]
+    },
+    {
+      "h": "Inhoud die u in de App maakt",
+      "body": [
+        "<p>In de App kunt u titels van stukken, bladmuziekafbeeldingen en pdf's, oefenlogboeken, omslagafbeeldingen en instellingen voor de metronoom en de app aanmaken en bewaren.</p>",
+        "<p>Deze inhoud wordt op uw apparaat opgeslagen en, als iCloud is ingeschakeld, tussen uw eigen apparaten gesynchroniseerd via de privédatabase van Apple iCloud. Deze synchronisatie vindt volledig binnen de diensten van Apple plaats en <strong>wij kunnen deze inhoud niet inzien, ophalen of bewaren</strong>.</p>",
+        "<p>Op gegevens in iCloud is het privacybeleid van Apple van toepassing. Wilt u niet synchroniseren, dan kunt u iCloud voor de App uitschakelen in de iOS-instellingen.</p>"
+      ]
+    },
+    {
+      "h": "Toegang tot camera en foto's",
+      "body": [
+        "<p>De App kan toegang tot uw camera en fotobibliotheek vragen zodat u bladmuziek kunt vastleggen of een omslagafbeelding kunt instellen. Toegang vindt alleen plaats met uw toestemming en de resulterende afbeeldingen worden uitsluitend op uw apparaat en in uw eigen iCloud bewaard, zoals hierboven beschreven. Ze worden nooit naar onze servers verzonden.</p>"
+      ]
+    },
+    {
+      "h": "Advertenties",
+      "body": [
+        "<p>De App toont banneradvertenties via Google AdMob van Google LLC. AdMob kan advertentie-ID's en apparaatgegevens verzamelen om advertenties te tonen, vertoningen te meten en fraude tegen te gaan.</p>",
+        "<p>De App vraagt geen toestemming via App Tracking Transparency. In regio's waar Apple die toestemming vereist, wordt de advertentie-ID dan ook niet gebruikt om u te volgen.</p>",
+        "<p>In regio's waar toestemming verplicht is, zoals de Europese Economische Ruimte, het Verenigd Koninkrijk en Zwitserland, toont de App bij de eerste start een toestemmingsscherm (Google User Messaging Platform) en worden advertenties volgens uw keuze getoond.</p>",
+        "<ul><li>Privacybeleid van Google: <a href=\"https://policies.google.com/privacy\">policies.google.com/privacy</a></li><li>Gebruik van gegevens door Google bij advertenties: <a href=\"https://policies.google.com/technologies/partner-sites\">policies.google.com/technologies/partner-sites</a></li></ul>"
+      ]
+    },
+    {
+      "h": "Gebruiksanalyse",
+      "body": [
+        "<p>Om functies te verbeteren en problemen op te sporen gebruikt de App Firebase Analytics van Google LLC. Firebase Analytics kan geaggregeerde gebruiksgegevens verzamelen, zoals het aantal keren starten en het schermgebruik, samen met het apparaatmodel, de besturingssysteemversie, de globale regio en advertentie- of apparaat-ID's.</p>",
+        "<p>Deze gegevens worden uitsluitend voor statistische analyse gebruikt. Wij gebruiken ze niet om personen te identificeren.</p>",
+        "<ul><li>Privacy en beveiliging bij Firebase: <a href=\"https://firebase.google.com/support/privacy\">firebase.google.com/support/privacy</a></li></ul>"
+      ]
+    },
+    {
+      "h": "Delen met derden",
+      "body": [
+        "<p>Afgezien van de hierboven beschreven advertentie- en analysedienstverleners delen of verkopen wij verzamelde gegevens niet aan derden, behalve wanneer openbaarmaking wettelijk verplicht is.</p>"
+      ]
+    },
+    {
+      "h": "Bewaren en verwijderen",
+      "body": [
+        "<p>Inhoud die u in de App maakt blijft op uw apparaat en in uw eigen iCloud staan totdat u die verwijdert. Door de App te verwijderen worden de op het apparaat opgeslagen gegevens gewist. Met iCloud gesynchroniseerde gegevens kunt u verwijderen door de iCloud-gegevens van de App in de iOS-instellingen te wissen.</p>"
+      ]
+    },
+    {
+      "h": "Kinderen",
+      "body": [
+        "<p>De App is niet bedoeld voor kinderen jonger dan 13 jaar en wij verzamelen niet bewust gegevens van kinderen jonger dan 13 jaar.</p>"
+      ]
+    },
+    {
+      "h": "Wijzigingen in dit beleid",
+      "body": [
+        "<p>Wij kunnen dit beleid herzien wanneer wetgeving verandert of de App nieuwe functies krijgt. In dat geval publiceren wij de bijgewerkte tekst en de datum van herziening op deze pagina.</p>"
+      ]
+    },
+    {
+      "h": "Contact",
+      "body": [
+        "<p>Heeft u vragen over dit beleid of over de omgang met gegevens in de App, neem dan contact met ons op.</p>",
+        "<p>Holy App<br><a href=\"https://www.facebook.com/pages/Holy-inc-Apps/136263789773255\">Facebook-pagina</a></p>"
+      ]
+    }
+  ]
+}

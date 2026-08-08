@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ぺたシティ | Holy App</title>
+<meta name="description" content="ぺたっとさわって街をつくる、点数もルールもないお絵かき箱庭ゲーム。">
+<!-- 参考: Arc (The Browser Company)。遊び心、丸み、傾いた要素、明るいグラデーション。
+     点数もルールもないゲームなので、真面目に整列させず、ふわっと散らす。 -->
+<style>
+:root {
+  --sky: #e8f4ff;
+  --sky-deep: #d3e9ff;
+  --ink: #12395e;
+  --ink-soft: #4a6f92;
+  --pop-1: #ff8a5b;
+  --pop-2: #ffd166;
+  --pop-3: #6fd0a0;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at 12% -8%, #fff6e6 0%, transparent 60%),
+    radial-gradient(900px 520px at 92% 6%, #ffe6ef 0%, transparent 62%),
+    var(--sky);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { max-width: 900px; margin-inline: auto; padding-inline: 1.5rem; }
+
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 58px; }
+.nav a { text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+.nav .home { opacity: 0.65; }
+
+.hero { padding-block: 4rem 2rem; text-align: center; }
+.hero img.icon {
+  width: 104px; height: 104px; border-radius: 24px;
+  box-shadow: 0 14px 34px rgba(18, 57, 94, 0.22);
+  transform: rotate(-4deg);
+}
+.hero h1 {
+  margin: 1.75rem 0 0.75rem;
+  font-size: clamp(2.6rem, 9vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+.hero h1 em { font-style: normal; color: var(--pop-1); }
+.hero .sub { margin: 0 auto; max-width: 26rem; color: var(--ink-soft); }
+
+.cta {
+  display: inline-block; margin-top: 2rem;
+  padding: 0.8rem 2rem; border-radius: 999px;
+  background: var(--ink); color: #fff;
+  font-weight: 700; font-size: 0.95rem; text-decoration: none;
+  box-shadow: 0 10px 24px rgba(18, 57, 94, 0.28);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.cta:hover { transform: translateY(-3px) rotate(-1.5deg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-top: 2.5rem; }
+.chip {
+  padding: 0.35rem 1rem; border-radius: 999px;
+  background: #fff; font-size: 0.85rem; font-weight: 600;
+  box-shadow: 0 3px 10px rgba(18, 57, 94, 0.1);
+}
+.chip:nth-child(1) { transform: rotate(-2deg); }
+.chip:nth-child(2) { transform: rotate(1.5deg); }
+.chip:nth-child(3) { transform: rotate(-1deg); }
+.chip:nth-child(4) { transform: rotate(2deg); }
+
+.shots { display: flex; gap: 1.5rem; overflow-x: auto; padding: 3.5rem 1.5rem 4rem; scroll-snap-type: x mandatory; }
+.shots img {
+  height: 500px; border-radius: 26px; flex: none; scroll-snap-align: center;
+  box-shadow: 0 18px 44px rgba(18, 57, 94, 0.2);
+}
+.shots img:nth-child(odd) { transform: rotate(-1.2deg); }
+.shots img:nth-child(even) { transform: rotate(1.2deg); }
+
+.steps { padding-bottom: 4rem; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.step { background: #fff; border-radius: 24px; padding: 1.75rem; box-shadow: 0 8px 26px rgba(18, 57, 94, 0.1); }
+.step .num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  font-weight: 800; color: #fff; margin-bottom: 0.9rem;
+}
+.step:nth-child(1) .num { background: var(--pop-1); }
+.step:nth-child(2) .num { background: var(--pop-2); color: var(--ink); }
+.step:nth-child(3) .num { background: var(--pop-3); }
+.step h2 { margin: 0 0 0.3rem; font-size: 1.05rem; font-weight: 700; }
+.step p { margin: 0; font-size: 0.93rem; color: var(--ink-soft); }
+
+.credits { background: var(--sky-deep); padding: 3rem 0; font-size: 0.82rem; color: var(--ink-soft); }
+.credits h3 { margin: 0 0 0.5rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.credits p { margin: 0; word-break: break-word; }
+
+.foot { padding-block: 2.5rem 4rem; font-size: 0.85rem; color: var(--ink-soft); }
+.foot p { margin: 0.4rem 0; }
+
+@media (max-width: 600px) { .shots img { height: 380px; } }
+.shots::after { content: ""; flex: 0 0 0.5rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="home" href="../">← Holy App</a>
+    <a href="https://apps.apple.com/jp/app/id924949601">App Store</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <img class="icon" src="../assets/icons/taptaptown.png" alt="" width="104" height="104">
+  <h1>ぺた<em>っ</em>と、<br>街ができる。</h1>
+  <p class="sub">タッチで建物をおいて、なぞって道路を描く。それだけで、あなただけの街が動きだします。</p>
+  <a class="cta" href="https://apps.apple.com/jp/app/id924949601">App Store で見る</a>
+  <div class="chips">
+    <span class="chip">点数なし</span>
+    <span class="chip">ルールなし</span>
+    <span class="chip">時間制限なし</span>
+    <span class="chip">こわれない</span>
+  </div>
+</header>
+
+<div class="shots">
+  <img src="../assets/shots/taptaptown-1.jpg" alt="街をつくる画面" loading="lazy">
+  <img src="../assets/shots/taptaptown-2.jpg" alt="道路を描く" loading="lazy">
+  <img src="../assets/shots/taptaptown-3.jpg" alt="動き出した街" loading="lazy">
+  <img src="../assets/shots/taptaptown-4.jpg" alt="背景色を変える" loading="lazy">
+</div>
+
+<section class="wrap steps">
+  <div class="step">
+    <span class="num">1</span>
+    <h2>ぺたっと置く</h2>
+    <p>さわったところに建物が置かれます。並べ方も向きも自由です。</p>
+  </div>
+  <div class="step">
+    <span class="num">2</span>
+    <h2>なぞって道をつくる</h2>
+    <p>指でなぞった線がそのまま道路になります。行き止まりでも大丈夫。</p>
+  </div>
+  <div class="step">
+    <span class="num">3</span>
+    <h2>さわると動きだす</h2>
+    <p>建物にふれると、人や車、動物たちが道路にそって歩き始めます。</p>
+  </div>
+</section>
+
+<section class="credits">
+  <div class="wrap">
+    <h3>Credits</h3>
+    <p>Images: Irasutoya, Icon HOIHOI, Illust Pop, Irasuton, IMT<br>
+       Sounds: Taira Komori, Sound Effect Lab, MaouDamashii, Kurage Kobo, Cutter Kamata</p>
+  </div>
+</section>
+
+<footer class="foot wrap">
+  <p><a href="../">Holy App のアプリ一覧</a></p>
+  <p>&copy; 2026 Holy App</p>
+</footer>
+
+</body>
+</html>

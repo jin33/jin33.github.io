@@ -1,0 +1,78 @@
+{
+  "lang": "en",
+  "endonym": "English",
+  "title": "Privacy Policy | RePlay Repertory",
+  "h1": "Privacy Policy",
+  "updated": "Last updated: August 8, 2026",
+  "intro": "Holy App (\"we\") provides the iOS app RePlay Repertory (the \"App\"). This policy explains how information is handled in the App.",
+  "sections": [
+    {
+      "h": "Information we do not collect",
+      "body": [
+        "<p>The App does not collect information that directly identifies you, such as your name, address, phone number, email address, or date of birth. There is no account registration or sign-in.</p>"
+      ]
+    },
+    {
+      "h": "Content you create in the App",
+      "body": [
+        "<p>The App lets you create and store song titles, sheet music images and PDFs, practice logs, cover images, and metronome and app settings.</p>",
+        "<p>This content is stored on your device and, when iCloud is enabled, synced between your own devices through Apple's iCloud private database. This sync stays entirely within Apple's services, and <strong>we cannot view, retrieve, or store this content</strong>.</p>",
+        "<p>Information held in iCloud is governed by Apple's privacy policy. If you prefer not to sync, you can turn off iCloud for the App in iOS Settings.</p>"
+      ]
+    },
+    {
+      "h": "Camera and photo access",
+      "body": [
+        "<p>The App may ask for access to your camera and photo library so you can capture sheet music or set a cover image for a song. Access happens only with your permission, and the resulting images are stored only on your device and in your own iCloud, as described above. They are never sent to our servers.</p>"
+      ]
+    },
+    {
+      "h": "Advertising",
+      "body": [
+        "<p>The App displays banner ads through Google AdMob, provided by Google LLC. AdMob may collect advertising identifiers and device information in order to deliver ads, measure impressions, and prevent fraud.</p>",
+        "<p>The App does not request App Tracking Transparency permission. In regions where Apple requires that permission, the advertising identifier is therefore not used to track you.</p>",
+        "<p>In regions where consent is required, such as the European Economic Area, the United Kingdom, and Switzerland, the App presents a consent screen (Google User Messaging Platform) on first launch and serves ads according to your choice.</p>",
+        "<ul><li>Google Privacy Policy: <a href=\"https://policies.google.com/privacy\">policies.google.com/privacy</a></li><li>How Google uses data in advertising: <a href=\"https://policies.google.com/technologies/partner-sites\">policies.google.com/technologies/partner-sites</a></li></ul>"
+      ]
+    },
+    {
+      "h": "Usage analytics",
+      "body": [
+        "<p>To improve features and identify problems, the App uses Firebase Analytics, provided by Google LLC. Firebase Analytics may collect aggregate usage data such as launch counts and screen usage, along with device model, OS version, approximate region, and advertising or device identifiers.</p>",
+        "<p>This data is used for statistical analysis only. We do not use it to identify individuals.</p>",
+        "<ul><li>Firebase privacy and security: <a href=\"https://firebase.google.com/support/privacy\">firebase.google.com/support/privacy</a></li></ul>"
+      ]
+    },
+    {
+      "h": "Sharing with third parties",
+      "body": [
+        "<p>Apart from the advertising and analytics providers described above, we do not share or sell collected information to third parties, except where disclosure is required by law.</p>"
+      ]
+    },
+    {
+      "h": "Retention and deletion",
+      "body": [
+        "<p>Content you create in the App remains on your device and in your own iCloud until you delete it. Deleting the App removes the data stored on your device. Data synced to iCloud can be removed by deleting the App's iCloud data in iOS Settings.</p>"
+      ]
+    },
+    {
+      "h": "Children",
+      "body": [
+        "<p>The App is not designed for children under 13, and we do not knowingly collect information from children under 13.</p>"
+      ]
+    },
+    {
+      "h": "Changes to this policy",
+      "body": [
+        "<p>We may revise this policy as laws change or as the App gains new features. When we do, we will publish the updated text and revision date on this page.</p>"
+      ]
+    },
+    {
+      "h": "Contact",
+      "body": [
+        "<p>For questions about this policy or about how information is handled in the App, please contact us.</p>",
+        "<p>Holy App<br><a href=\"https://www.facebook.com/pages/Holy-inc-Apps/136263789773255\">Facebook page</a></p>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>全画面タイマー | Holy App</title>
+<meta name="description" content="画面いっぱいに時間だけを出す、シンプルなタイマー。">
+<!-- 参考: Raycast の黒基調＋Braun の時計。装飾を足さず、数字そのものを主役にする。
+     アプリ自体が「画面に数字しかない」ので、ページも同じ構えにした。 -->
+<style>
+:root {
+  --bg: #0a0a0a;
+  --fg: #f0f0f0;
+  --fg-soft: #8a8a8f;
+  --line: rgba(255, 255, 255, 0.12);
+  --accent: #ff6a3d;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { max-width: 920px; margin-inline: auto; padding-inline: 1.5rem; }
+
+.nav { border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 54px; }
+.nav a { text-decoration: none; font-size: 0.8rem; letter-spacing: 0.06em; }
+.nav .home { color: var(--fg-soft); }
+
+/* アプリの画面そのものを再現する。スクリーンショットより先に体験を見せたい。 */
+.clock {
+  padding: 6rem 1.5rem 4rem;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+.clock .time {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(4rem, 22vw, 11rem);
+  font-weight: 200;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0;
+}
+.clock .time .sep { color: var(--accent); }
+.clock .label {
+  margin: 1.5rem 0 0;
+  font-size: 0.78rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--fg-soft);
+}
+
+.intro { padding-block: 4.5rem 3rem; display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+.intro img { width: 80px; height: 80px; border-radius: 18px; border: 1px solid var(--line); }
+.intro h1 { margin: 0 0 0.4rem; font-size: clamp(1.8rem, 5vw, 2.6rem); letter-spacing: -0.035em; font-weight: 600; }
+.intro p { margin: 0; color: var(--fg-soft); max-width: 28rem; }
+.cta {
+  display: inline-block; margin-top: 1.4rem;
+  padding: 0.6rem 1.6rem; border: 1px solid var(--fg); border-radius: 999px;
+  font-size: 0.86rem; text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.cta:hover { background: var(--fg); color: var(--bg); }
+
+.modes { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.mode { padding: 2rem 1.5rem; border-right: 1px solid var(--line); }
+.mode:last-child { border-right: 0; }
+.mode h2 { margin: 0 0 0.25rem; font-size: 0.95rem; font-weight: 600; }
+.mode p { margin: 0; font-size: 0.85rem; color: var(--fg-soft); }
+
+.shots { display: flex; gap: 1.25rem; justify-content: safe center; overflow-x: auto; padding: 4rem 1.5rem; }
+.shots img { height: 460px; border-radius: 18px; border: 1px solid var(--line); flex: none; }
+
+.closing { border-top: 1px solid var(--line); padding: 4rem 0; }
+.closing p { margin: 0; font-size: clamp(1.2rem, 3.2vw, 1.6rem); letter-spacing: -0.02em; max-width: 26rem; }
+
+.foot { border-top: 1px solid var(--line); padding-block: 2.5rem 4rem; font-size: 0.8rem; color: var(--fg-soft); }
+.foot p { margin: 0.4rem 0; }
+
+@media (max-width: 720px) {
+  .modes { grid-template-columns: repeat(2, 1fr); }
+  .mode { border-bottom: 1px solid var(--line); }
+  .mode:nth-child(2n) { border-right: 0; }
+  .shots img { height: 360px; }
+}
+.shots::after { content: ""; flex: 0 0 0.5rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="home" href="../">← Holy App</a>
+    <a href="https://apps.apple.com/jp/app/id1502189390">App Store</a>
+  </div>
+</nav>
+
+<section class="clock">
+  <p class="time"><span>25</span><span class="sep">:</span><span>00</span></p>
+  <p class="label">Full Screen Timer</p>
+</section>
+
+<header class="intro wrap">
+  <img src="../assets/icons/zengamentimer.png" alt="" width="80" height="80">
+  <div>
+    <h1>画面いっぱいの、ただのタイマー。</h1>
+    <p>離れた場所からでも読める大きさで、時間だけを表示します。運動や学習のお供に。</p>
+    <a class="cta" href="https://apps.apple.com/jp/app/id1502189390">App Store で見る</a>
+  </div>
+</header>
+
+<section class="modes">
+  <div class="mode"><h2>カウントダウン</h2><p>決めた時間から減らす</p></div>
+  <div class="mode"><h2>カウントアップ</h2><p>0 から積み上げる</p></div>
+  <div class="mode"><h2>繰り返し</h2><p>終わったらまた最初から</p></div>
+  <div class="mode"><h2>インターバル</h2><p>運動と休憩を交互に</p></div>
+</section>
+
+<div class="shots">
+  <img src="../assets/shots/zengamentimer-1.jpg" alt="タイマーの表示" loading="lazy">
+  <img src="../assets/shots/zengamentimer-2.jpg" alt="設定画面" loading="lazy">
+</div>
+
+<section class="closing">
+  <div class="wrap">
+    <p>設定して、置いておく。それ以上のことはしません。</p>
+  </div>
+</section>
+
+<footer class="foot wrap">
+  <p><a href="../">Holy App のアプリ一覧</a></p>
+  <p>&copy; 2026 Holy App</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>おうちカルテ | Holy App</title>
+<meta name="description" content="家族の体調・お薬・授乳を記録して、病院での説明に持っていけるアプリ。">
+<!-- 参考: Anthropic / Bear。温かいオフホワイトとセリフ書体。
+     体調が悪いときに開くアプリなので、明るくにぎやかにせず、静かで安心する側に振る。 -->
+<style>
+:root {
+  --cream: #f7f1e8;
+  --cream-deep: #efe6d8;
+  --ink: #3a2f24;
+  --ink-soft: #7a6b5a;
+  --rule: rgba(58, 47, 36, 0.14);
+  --accent: #b4653a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { max-width: 880px; margin-inline: auto; padding-inline: 1.5rem; }
+.narrow { max-width: 620px; }
+
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+.nav a { text-decoration: none; font-size: 0.85rem; }
+.nav .home { color: var(--ink-soft); }
+
+.hero { padding-block: 4.5rem 3.5rem; display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+.hero img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 8px 26px rgba(58, 47, 36, 0.18); }
+.hero h1 {
+  margin: 0 0 0.4rem;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  font-size: clamp(2rem, 5.5vw, 2.9rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+}
+.hero .sub { margin: 0; color: var(--ink-soft); max-width: 28rem; }
+.cta {
+  display: inline-block; margin-top: 1.5rem;
+  padding: 0.62rem 1.6rem; border-radius: 999px;
+  background: var(--accent); color: var(--cream);
+  font-size: 0.9rem; text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+.cta:hover { opacity: 0.85; }
+
+.quote { background: var(--cream-deep); padding: 4rem 0; }
+.quote p {
+  margin: 0;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  font-size: clamp(1.25rem, 3.4vw, 1.7rem);
+  line-height: 2;
+  letter-spacing: 0.02em;
+}
+.quote .who { margin-top: 1.25rem; font-family: inherit; font-size: 0.85rem; color: var(--ink-soft); letter-spacing: 0; }
+
+.shots { display: flex; gap: 1.5rem; overflow-x: auto; padding: 3.5rem 1.5rem; scroll-snap-type: x mandatory; }
+.shots img {
+  height: 480px; border-radius: 22px; flex: none; scroll-snap-align: center;
+  box-shadow: 0 14px 40px rgba(58, 47, 36, 0.16);
+}
+
+.points { padding-block: 1.5rem 3rem; }
+.point { border-top: 1px solid var(--rule); padding: 2rem 0; }
+.point h2 {
+  margin: 0 0 0.4rem;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  font-size: 1.25rem; font-weight: 500; letter-spacing: 0.02em;
+}
+.point p { margin: 0; color: var(--ink-soft); }
+
+.note { background: var(--cream-deep); padding: 3rem 0; font-size: 0.9rem; color: var(--ink-soft); }
+
+.foot { padding-block: 2.5rem 4rem; font-size: 0.85rem; color: var(--ink-soft); border-top: 1px solid var(--rule); }
+.foot p { margin: 0.4rem 0; }
+
+@media (max-width: 600px) { .shots img { height: 380px; } }
+.shots::after { content: ""; flex: 0 0 0.5rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="home" href="../">← Holy App</a>
+    <a href="https://apps.apple.com/jp/app/id867437900">App Store</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <img src="../assets/icons/homekarte.png" alt="" width="96" height="96">
+  <div>
+    <h1>おうちカルテ</h1>
+    <p class="sub">家族の体調を、そっと記録する。<br>熱、症状、飲んだ薬。あとで思い出せなくなる細かいことを、その場で残しておくためのアプリです。</p>
+    <a class="cta" href="https://apps.apple.com/jp/app/id867437900">App Store で見る</a>
+  </div>
+</header>
+
+<section class="quote">
+  <div class="wrap narrow">
+    <p>「熱はいつから出ていましたか」<br>「その薬は何時に飲みましたか」</p>
+    <p class="who">——— 診察室で、思い出せなかったことはありませんか。</p>
+  </div>
+</section>
+
+<div class="shots">
+  <img src="../assets/shots/homekarte-1.jpg" alt="記録の一覧" loading="lazy">
+  <img src="../assets/shots/homekarte-2.jpg" alt="体温と症状の入力" loading="lazy">
+  <img src="../assets/shots/homekarte-3.jpg" alt="お薬の記録" loading="lazy">
+  <img src="../assets/shots/homekarte-4.jpg" alt="記録の印刷" loading="lazy">
+</div>
+
+<section class="points wrap narrow">
+  <div class="point">
+    <h2>時間、体温、状態を残す</h2>
+    <p>症状が変わったときに書き足していくだけです。診察のときは、この記録を見せながら説明できます。</p>
+  </div>
+  <div class="point">
+    <h2>飲んだ薬を記録する</h2>
+    <p>処方された薬の種類と、飲んだ時間を残せます。次にいつ飲ませてよいかの判断にも使えます。</p>
+  </div>
+  <div class="point">
+    <h2>家族全員を1つのアプリに</h2>
+    <p>ユーザーは何人でも登録できます。子どもが複数いても、記録が混ざりません。</p>
+  </div>
+  <div class="point">
+    <h2>一日分をまとめて印刷・送信</h2>
+    <p>保存した記録は一日分をまとめて印刷できます。メールやメッセージで送ることもできます。</p>
+  </div>
+</section>
+
+<section class="note">
+  <div class="wrap narrow">
+    このアプリは診断や治療を行うものではありません。記録を残し、医師に伝えることを助けるための道具です。
+  </div>
+</section>
+
+<footer class="foot wrap narrow">
+  <p><a href="../">Holy App のアプリ一覧</a></p>
+  <p>&copy; 2026 Holy App</p>
+</footer>
+
+</body>
+</html>

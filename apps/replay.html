@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RePlay Repertory | Holy App</title>
+<meta name="description" content="覚えた曲を忘れずに弾き続けるための、レパートリー管理アプリ。">
+<!-- 参考: Things (Cultured Code)。生成りの地色、大きな余白、静かなセリフ見出し。
+     練習を淡々と続けるアプリなので、にぎやかにせず落ち着かせる。 -->
+<style>
+:root {
+  --paper: #f2f0ec;
+  --paper-deep: #e8e5df;
+  --ink: #2b2a28;
+  --ink-soft: #6f6b64;
+  --rule: rgba(43, 42, 40, 0.12);
+  --mark: #9a6b3f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { max-width: 860px; margin-inline: auto; padding-inline: 1.5rem; }
+
+.nav { border-bottom: 1px solid var(--rule); }
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 54px; }
+.nav a { text-decoration: none; font-size: 0.85rem; letter-spacing: 0.02em; }
+.nav .home { color: var(--ink-soft); }
+
+.hero { padding-block: 5.5rem 3rem; text-align: center; }
+.hero img.icon {
+  width: 92px; height: 92px; border-radius: 21px;
+  box-shadow: 0 10px 30px rgba(43, 42, 40, 0.16);
+}
+.hero h1 {
+  margin: 1.75rem 0 0.5rem;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+.hero .sub { margin: 0 auto; max-width: 26rem; color: var(--ink-soft); }
+
+.cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.6rem 1.6rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.cta:hover { background: var(--ink); color: var(--paper); }
+
+.stage {
+  display: flex;
+  gap: 1.75rem;
+  overflow-x: auto;
+  padding: 3.5rem 1.5rem 4.5rem;
+  scroll-snap-type: x mandatory;
+}
+.stage img {
+  height: 540px;
+  border-radius: 26px;
+  flex: none;
+  scroll-snap-align: center;
+  box-shadow: 0 18px 50px rgba(43, 42, 40, 0.18);
+}
+
+.band { background: var(--paper-deep); }
+.band .wrap { padding-block: 4.5rem; }
+
+.lead {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  font-size: clamp(1.3rem, 3.4vw, 1.75rem);
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.features { padding-block: 4.5rem 1rem; }
+.features h2 {
+  font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600; margin: 0 0 2rem;
+}
+.feature { border-top: 1px solid var(--rule); padding: 1.6rem 0; display: flex; gap: 1.5rem; }
+.feature .n {
+  font-family: Georgia, serif; font-size: 0.95rem; color: var(--mark);
+  flex: none; width: 2rem; padding-top: 0.15rem;
+}
+.feature h3 { margin: 0 0 0.2rem; font-size: 1rem; font-weight: 650; }
+.feature p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+.foot { border-top: 1px solid var(--rule); margin-top: 4rem; padding-block: 2.5rem 4rem; font-size: 0.85rem; color: var(--ink-soft); }
+.foot a { color: var(--ink-soft); }
+.foot p { margin: 0.4rem 0; }
+
+@media (max-width: 600px) { .stage img { height: 400px; } }
+.stage::after { content: ""; flex: 0 0 0.5rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="home" href="../">← Holy App</a>
+    <a href="https://apps.apple.com/jp/app/id6792226081">App Store</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <img class="icon" src="../assets/icons/replay.png" alt="" width="92" height="92">
+  <h1>RePlay Repertory</h1>
+  <p class="sub">覚えた曲を、忘れないために。<br>練習の記録と復習の周期から、今日弾く曲を静かに教えてくれます。</p>
+  <a class="cta" href="https://apps.apple.com/jp/app/id6792226081">App Store で見る</a>
+</header>
+
+<div class="stage">
+  <img src="../assets/shots/replay-1.jpg" alt="今日やる曲の一覧" loading="lazy">
+  <img src="../assets/shots/replay-2.jpg" alt="曲の詳細画面" loading="lazy">
+  <img src="../assets/shots/replay-3.jpg" alt="楽譜の表示" loading="lazy">
+  <img src="../assets/shots/replay-4.jpg" alt="練習履歴" loading="lazy">
+  <img src="../assets/shots/replay-5.jpg" alt="メトロノーム" loading="lazy">
+</div>
+
+<section class="band">
+  <div class="wrap">
+    <p class="lead">弾けるようになった曲ほど、いつのまにか指から抜けていきます。RePlay は、曲ごとの練習記録と復習の周期から「今日やる」「そろそろ」「余裕あり」を並べ替えて、レパートリーを保ち続けるための道具です。</p>
+  </div>
+</section>
+
+<section class="features wrap">
+  <h2>できること</h2>
+
+  <div class="feature">
+    <span class="n">01</span>
+    <div>
+      <h3>復習の優先度がひと目でわかる</h3>
+      <p>前回の練習からの経過と曲ごとの復習周期から、今日やるべき曲を上に並べます。見送るときは明日以降へずらせます。</p>
+    </div>
+  </div>
+
+  <div class="feature">
+    <span class="n">02</span>
+    <div>
+      <h3>楽譜を曲にまとめて持ち歩く</h3>
+      <p>PDF・JPEG・PNG を曲に追加して並べ替えられます。複数の画像を1つの楽譜としてページ順に表示できます。</p>
+    </div>
+  </div>
+
+  <div class="feature">
+    <span class="n">03</span>
+    <div>
+      <h3>演奏中に使えるメトロノーム</h3>
+      <p>テンポ、拍子、音色を選べます。曲の画面から離れずに呼び出せます。</p>
+    </div>
+  </div>
+
+  <div class="feature">
+    <span class="n">04</span>
+    <div>
+      <h3>表紙で見分ける</h3>
+      <p>曲に表紙画像を設定できます。一覧の見た目は5種類から選べます。</p>
+    </div>
+  </div>
+
+  <div class="feature">
+    <span class="n">05</span>
+    <div>
+      <h3>iCloud で同期する</h3>
+      <p>曲、練習記録、表紙、楽譜を自分の端末間で同期します。同期した内容は開発者からは見えません。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot wrap">
+  <p><a href="../replay/privacy/ja.html">プライバシーポリシー</a></p>
+  <p><a href="../">Holy App のアプリ一覧</a></p>
+  <p>&copy; 2026 Holy App</p>
+</footer>
+
+</body>
+</html>

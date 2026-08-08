@@ -1,0 +1,78 @@
+{
+  "lang": "zh-Hans",
+  "endonym": "简体中文",
+  "title": "隐私政策 | RePlay Repertory",
+  "h1": "隐私政策",
+  "updated": "最后更新：2026 年 8 月 8 日",
+  "intro": "Holy App（以下称“我们”）提供 iOS 应用 RePlay Repertory（以下称“本应用”）。本政策说明本应用如何处理信息。",
+  "sections": [
+    {
+      "h": "我们不收集的信息",
+      "body": [
+        "<p>本应用不收集可直接识别您身份的信息，例如姓名、住址、电话号码、电子邮件地址或出生日期。本应用没有注册或登录功能。</p>"
+      ]
+    },
+    {
+      "h": "您在本应用中创建的内容",
+      "body": [
+        "<p>本应用可用于创建和保存曲目名称、乐谱图片与 PDF、练习记录、封面图片，以及节拍器和应用设置。</p>",
+        "<p>这些内容保存在您的设备上；若已启用 iCloud，则通过 Apple 的 iCloud 私有数据库在您本人的设备之间同步。该同步完全在 Apple 的服务内进行，<strong>我们无法查看、获取或存储这些内容</strong>。</p>",
+        "<p>保存在 iCloud 中的信息适用 Apple 的隐私政策。如不希望同步，可在 iOS 设置中关闭本应用的 iCloud。</p>"
+      ]
+    },
+    {
+      "h": "相机与照片访问",
+      "body": [
+        "<p>为便于您拍摄乐谱或设置曲目封面，本应用可能请求访问相机和照片图库。仅在您授权后才会访问，所得图片如上所述仅保存在您的设备和您本人的 iCloud 中，绝不会发送至我们的服务器。</p>"
+      ]
+    },
+    {
+      "h": "广告",
+      "body": [
+        "<p>本应用通过 Google LLC 提供的 Google AdMob 展示横幅广告。AdMob 可能收集广告标识符和设备信息，用于投放广告、统计展示次数以及防范欺诈。</p>",
+        "<p>本应用不请求“App 跟踪透明度”（App Tracking Transparency）权限。因此在 Apple 要求该权限的地区，广告标识符不会被用于跟踪您。</p>",
+        "<p>在需要取得同意的地区（如欧洲经济区、英国和瑞士），本应用会在首次启动时显示同意界面（Google User Messaging Platform），并根据您的选择投放广告。</p>",
+        "<ul><li>Google 隐私权政策：<a href=\"https://policies.google.com/privacy\">policies.google.com/privacy</a></li><li>Google 在广告中的数据使用：<a href=\"https://policies.google.com/technologies/partner-sites\">policies.google.com/technologies/partner-sites</a></li></ul>"
+      ]
+    },
+    {
+      "h": "使用情况分析",
+      "body": [
+        "<p>为改进功能并发现问题，本应用使用 Google LLC 提供的 Firebase Analytics。Firebase Analytics 可能收集启动次数、页面使用情况等统计性使用数据，以及设备型号、系统版本、大致地区和广告或设备标识符。</p>",
+        "<p>这些数据仅用于统计分析，我们不会将其用于识别个人身份。</p>",
+        "<ul><li>Firebase 隐私与安全：<a href=\"https://firebase.google.com/support/privacy\">firebase.google.com/support/privacy</a></li></ul>"
+      ]
+    },
+    {
+      "h": "向第三方提供",
+      "body": [
+        "<p>除上述广告与分析服务提供商外，我们不会向第三方提供或出售所收集的信息，但依法律规定必须披露的情形除外。</p>"
+      ]
+    },
+    {
+      "h": "保存与删除",
+      "body": [
+        "<p>您在本应用中创建的内容将保留在您的设备和您本人的 iCloud 中，直至您将其删除。删除本应用即会清除设备上保存的数据。已同步至 iCloud 的数据，可在 iOS 设置中删除本应用的 iCloud 数据以清除。</p>"
+      ]
+    },
+    {
+      "h": "儿童",
+      "body": [
+        "<p>本应用并非面向 13 岁以下儿童设计，我们也不会在知情的情况下收集 13 岁以下儿童的信息。</p>"
+      ]
+    },
+    {
+      "h": "本政策的变更",
+      "body": [
+        "<p>因法律变化或本应用新增功能，我们可能修订本政策。修订后，我们会在本页面公布最新内容及修订日期。</p>"
+      ]
+    },
+    {
+      "h": "联系方式",
+      "body": [
+        "<p>如对本政策或本应用的信息处理有任何疑问，请与我们联系。</p>",
+        "<p>Holy App<br><a href=\"https://www.facebook.com/pages/Holy-inc-Apps/136263789773255\">Facebook 主页</a></p>"
+      ]
+    }
+  ]
+}

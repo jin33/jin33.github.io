@@ -1,0 +1,146 @@
+{
+  "apps": [
+    {
+      "slug": "replay",
+      "trackId": 6792226081,
+      "name": "RePlay Repertory",
+      "genre": "Music",
+      "description": "RePlay Repertoryは、覚えた曲を忘れずに弾き続けるためのレパートリー管理アプリです。\n\n曲ごとの練習記録と復習周期から、今日練習する曲をわかりやすく整理します。楽譜や表紙画像も曲にまとめて保存でき、演奏中に使えるメトロノームも備えています。\n\n主な機能\n\n・復習の優先度を「今日やる」「そろそろ」「余裕あり」で表示\n・曲ごとの練習履歴と復習周期を記録\n・PDF、JPEG、PNGの楽譜を曲に追加・並べ替え\n・複数の画像を1つの楽譜としてページ順に表示\n・曲に表紙画像を設定\n・テンポ、拍子、音色を選べるメトロノーム\n・iCloudで曲、練習記録、表紙、楽譜を同期\n\n日々の練習と、長く大切にしたいレパートリーの管理に使えます。",
+      "url": "https://apps.apple.com/jp/app/replay-repertory/id6792226081",
+      "icon": "assets/icons/replay.png",
+      "shots": [
+        "assets/shots/replay-1.jpg",
+        "assets/shots/replay-2.jpg",
+        "assets/shots/replay-3.jpg",
+        "assets/shots/replay-4.jpg",
+        "assets/shots/replay-5.jpg"
+      ]
+    },
+    {
+      "slug": "homekarte",
+      "trackId": 867437900,
+      "name": "おうちカルテ - 家族の体調・お薬・授乳記録",
+      "genre": "Medical",
+      "description": "「おうちカルテ」はあなたの家族が病気になったとき、その病状をメモするアプリです。\n時間、体温、状態などをメモして病院での病状説明に役立てて下さい。\n薬が処方されたら飲んだ時間や種類をメモしておくのもいいでしょう。\n\nユーザーは何人でも登録できるので、ご家族全員の状況を1つのアプリに記録することができます。\n\n保存した記録は一日分をまとめて印刷できます。\nまた、メール送信、メッセージ送信にも対応しています。\n\nご家族の病状記録に「おうちカルテ」を使ってみて下さい。",
+      "url": "https://apps.apple.com/jp/app/%E3%81%8A%E3%81%86%E3%81%A1%E3%82%AB%E3%83%AB%E3%83%86-%E5%AE%B6%E6%97%8F%E3%81%AE%E4%BD%93%E8%AA%BF-%E3%81%8A%E8%96%AC-%E6%8E%88%E4%B9%B3%E8%A8%98%E9%8C%B2/id867437900",
+      "icon": "assets/icons/homekarte.png",
+      "shots": [
+        "assets/shots/homekarte-1.jpg",
+        "assets/shots/homekarte-2.jpg",
+        "assets/shots/homekarte-3.jpg",
+        "assets/shots/homekarte-4.jpg"
+      ]
+    },
+    {
+      "slug": "taptaptown",
+      "trackId": 924949601,
+      "name": "ぺたシティ",
+      "genre": "Games",
+      "description": "ぺたっとさわって、あなただけの街をつくろう。タッチで建物をおいて、なぞって道路を描きます。建物にふれると、人や車、動物たちが道路にそって動き出します。点数も難しいルールもありません。好きなように街をつくって、背景の色を変えて、街が動き出す様子を楽しめます。\n\nCredits\nImages: Irasutoya, Icon HOIHOI, Illust Pop, Irasuton, IMT\nSounds: Taira Komori, Sound Effect Lab, MaouDamashii, Kurage Kobo, Cutter Kamata\nhttps://www.irasutoya.com/\nhttp://iconhoihoi.oops.jp/\nhttp://illpop.com/\nhttp://www.irasuton.com/\nhttp://illust-imt.jp/\nhttp://taira-komori.jpn.org/freesound.html\nhttp://soundeffect-lab.info/\nhttp://maoudamashii.jokersounds.com/music_se.html\nhttp://www.kurage-kosho.info/\nhttps://www.youtube.com/channel/UCvEc-N7Q8dre-Z5gcmMPAmg",
+      "url": "https://apps.apple.com/jp/app/%E3%81%BA%E3%81%9F%E3%82%B7%E3%83%86%E3%82%A3/id924949601",
+      "icon": "assets/icons/taptaptown.png",
+      "shots": [
+        "assets/shots/taptaptown-1.jpg",
+        "assets/shots/taptaptown-2.jpg",
+        "assets/shots/taptaptown-3.jpg",
+        "assets/shots/taptaptown-4.jpg"
+      ]
+    },
+    {
+      "slug": "average100",
+      "trackId": 892765668,
+      "name": "平均点のための計算機 - Average100 Lite -",
+      "genre": "Education",
+      "description": "平均点をすばやく簡単に計算できるアプリです。数字を入力するだけで、合計・人数・平均がすぐに表示されます。\n\n入力した数字は編集・削除・並べ替えができます。順位表示にも対応しているため、テストの採点や集計、日常の平均計算に便利です。\n\n無料版では広告が表示されます。",
+      "url": "https://apps.apple.com/jp/app/%E5%B9%B3%E5%9D%87%E7%82%B9%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E8%A8%88%E7%AE%97%E6%A9%9F-average100-lite/id892765668",
+      "icon": "assets/icons/average100.png",
+      "shots": [
+        "assets/shots/average100-1.jpg",
+        "assets/shots/average100-2.jpg",
+        "assets/shots/average100-3.jpg",
+        "assets/shots/average100-4.jpg"
+      ]
+    },
+    {
+      "slug": "kanji",
+      "trackId": 1075683691,
+      "name": "漢字ボード 1年生 しゃべる漢字表 FREE",
+      "genre": "Education",
+      "description": "Japanese KANJI -Touch&Sounds- FREE\n\n漢字ボード 1年生 しゃべる漢字表 FREE\n\n入学前の幼児やピッカピカの1年生におすすめ！\nさわって、あそんで、覚えちゃおう。\n\nタッチで入力、タッチで再生。\nかんたん操作で漢字にふれてみよう。\n\n音声は2文字以上の単語にも対応しています。\n例　森→再生→もり　森林→再生→しんりん\n\nこれは日本語の漢字を学べるアプリです。\n文字を押すと音が流れます。\n\n入力した文字は再生ボタンで再生することができます。\n\n漢字を学びたいすべての人におすすめします。",
+      "url": "https://apps.apple.com/jp/app/%E6%BC%A2%E5%AD%97%E3%83%9C%E3%83%BC%E3%83%89-1%E5%B9%B4%E7%94%9F-%E3%81%97%E3%82%83%E3%81%B9%E3%82%8B%E6%BC%A2%E5%AD%97%E8%A1%A8-free/id1075683691",
+      "icon": "assets/icons/kanji.png",
+      "shots": [
+        "assets/shots/kanji-1.jpg",
+        "assets/shots/kanji-2.jpg",
+        "assets/shots/kanji-3.jpg",
+        "assets/shots/kanji-4.jpg",
+        "assets/shots/kanji-5.jpg"
+      ]
+    },
+    {
+      "slug": "hiragana",
+      "trackId": 783511889,
+      "name": "平仮名ボード しゃべる50音表",
+      "genre": "Education",
+      "description": "さわって、あそんで、覚えちゃおう。\n\nタッチで入力、タッチで再生。\nかんたん操作でひらがな遊びができちゃいます。\n\nひらがなに興味を持ち始めたお子様におすすめします。",
+      "url": "https://apps.apple.com/jp/app/%E5%B9%B3%E4%BB%AE%E5%90%8D%E3%83%9C%E3%83%BC%E3%83%89-%E3%81%97%E3%82%83%E3%81%B9%E3%82%8B50%E9%9F%B3%E8%A1%A8/id783511889",
+      "icon": "assets/icons/hiragana.png",
+      "shots": [
+        "assets/shots/hiragana-1.jpg",
+        "assets/shots/hiragana-2.jpg"
+      ]
+    },
+    {
+      "slug": "katakana",
+      "trackId": 783514541,
+      "name": "片仮名ボード しゃべる50音表",
+      "genre": "Education",
+      "description": "さわって、あそんで、覚えちゃおう。\n\nタッチで入力、タッチで再生。\nかんたん操作でカタカナ遊びができちゃいます。\n\nカタカナに興味を持ち始めたお子様におすすめします。",
+      "url": "https://apps.apple.com/jp/app/%E7%89%87%E4%BB%AE%E5%90%8D%E3%83%9C%E3%83%BC%E3%83%89-%E3%81%97%E3%82%83%E3%81%B9%E3%82%8B50%E9%9F%B3%E8%A1%A8/id783514541",
+      "icon": "assets/icons/katakana.png",
+      "shots": [
+        "assets/shots/katakana-1.jpg",
+        "assets/shots/katakana-2.jpg"
+      ]
+    },
+    {
+      "slug": "drawingciao",
+      "trackId": 720019222,
+      "name": "かんたんお絵描き - おえかきっチャオ",
+      "genre": "Education",
+      "description": "これは誰にでも使えるシンプルなお絵描きアプリです。\n\niPhoneの操作を覚えたばかりの小さなお子様や、かんたんなペイントアプリをお探し方におすすめします。\n\n小さなお子様が一人でも使えるように、複雑な操作は一切なくしました。\n\n今までのペイントアプリを小さなお子様が使うと\n\n・ペンの変え方が分からない\n・新規作成のやり方が分からない\n・保存方法が分からない\n\nなど、やりたいことが出来なかったりします。\nこれでは集中してお絵描きできません。\n\nでも、\n\nこのアプリなら、大丈夫 (*´∀`*)\nお子様は「すぐに」アプリの使い方を覚えてくれるでしょう。",
+      "url": "https://apps.apple.com/jp/app/%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%E3%81%8A%E7%B5%B5%E6%8F%8F%E3%81%8D-%E3%81%8A%E3%81%88%E3%81%8B%E3%81%8D%E3%81%A3%E3%83%81%E3%83%A3%E3%82%AA/id720019222",
+      "icon": "assets/icons/drawingciao.png",
+      "shots": [
+        "assets/shots/drawingciao-1.jpg",
+        "assets/shots/drawingciao-2.jpg"
+      ]
+    },
+    {
+      "slug": "zengamentimer",
+      "trackId": 1502189390,
+      "name": "全画面タイマー",
+      "genre": "Utilities",
+      "description": "全画面表示のシンプルなタイマーです。\n\nカウントダウン、カウントアップ、繰り返し、インターバルを設定できます。\n\n運動や学習のお供にいかがですか。",
+      "url": "https://apps.apple.com/jp/app/%E5%85%A8%E7%94%BB%E9%9D%A2%E3%82%BF%E3%82%A4%E3%83%9E%E3%83%BC/id1502189390",
+      "icon": "assets/icons/zengamentimer.png",
+      "shots": [
+        "assets/shots/zengamentimer-1.jpg",
+        "assets/shots/zengamentimer-2.jpg"
+      ]
+    },
+    {
+      "slug": "lifecounter",
+      "trackId": 1186784709,
+      "name": "バディライフ",
+      "genre": "Utilities",
+      "description": "バディライフはバディファイト専用のライフカウンターアプリです。初期ライフは10。かんたん操作で5,8,10,11,12,20にできるので天国地獄,アイン,ツヴァイ,竜牙雷帝も大丈夫。背景画像は変更可能！自分だけのライフカンターでオープン・ザ・フラッグ！\n\n※アプリ内購入があります。\nプレミアム版を購入することで画像を無制限に保存でき、広告が非表示になります。\n\n※このアプリは「株式会社ブシロード」非公式です。",
+      "url": "https://apps.apple.com/jp/app/%E3%83%90%E3%83%87%E3%82%A3%E3%83%A9%E3%82%A4%E3%83%95/id1186784709",
+      "icon": "assets/icons/lifecounter.png",
+      "shots": [
+        "assets/shots/lifecounter-1.jpg",
+        "assets/shots/lifecounter-2.jpg"
+      ]
+    }
+  ]
+}
