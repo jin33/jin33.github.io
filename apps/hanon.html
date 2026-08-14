@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ハノン日和 | Holy App</title>
+<meta name="description" content="ハノンを毎日の習慣に。24調の練習、楽譜、履歴、メトロノームをひとつにまとめたiPhoneアプリ。">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<style>
+:root {
+  --bg: #fff;
+  --surface: #f7f7f9;
+  --ink: #141416;
+  --ink-soft: #66666d;
+  --line: #e5e5e9;
+  --rose: #e6004f;
+  --rose-deep: #c90045;
+  --blush: #fff1f5;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { width: min(1120px, calc(100% - 3rem)); margin-inline: auto; }
+.nav { border-bottom: 1px solid var(--line); background: color-mix(in srgb, #fff 88%, transparent); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+.nav .wrap { height: 58px; display: flex; align-items: center; justify-content: space-between; }
+.nav a { text-decoration: none; font-size: 0.86rem; font-weight: 600; }
+.nav .home { color: var(--rose); }
+.nav .store { color: var(--ink-soft); }
+.hero {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.72fr);
+  gap: clamp(3rem, 8vw, 7rem);
+  align-items: center;
+  padding-block: 4.5rem 5rem;
+}
+.hero-copy { padding-block: 2rem; }
+.app-icon { width: 112px; height: 112px; border-radius: 25px; box-shadow: 0 20px 45px rgba(159, 0, 50, 0.2); }
+h1 { margin: 1.7rem 0 1rem; font-size: clamp(2.7rem, 6vw, 4.65rem); letter-spacing: -0.055em; line-height: 1.08; }
+.lead { max-width: 34rem; margin: 0; color: var(--ink-soft); font-size: clamp(1.04rem, 2vw, 1.22rem); }
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  margin-top: 2rem;
+  padding: 0.78rem 1.75rem;
+  border-radius: 13px;
+  background: var(--rose);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.cta:hover { background: var(--rose-deep); transform: translateY(-2px); }
+.hero-media { justify-self: center; width: min(410px, 100%); }
+.hero-media img { display: block; width: 100%; height: auto; aspect-ratio: 1320 / 2868; object-fit: contain; border-radius: 30px; box-shadow: 0 28px 70px rgba(38, 20, 28, 0.14); }
+.features { border-top: 1px solid var(--line); }
+.feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+  gap: clamp(2.5rem, 7vw, 6rem);
+  align-items: center;
+  min-height: 620px;
+  padding-block: 5.5rem;
+}
+.feature:nth-child(even) { grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr); }
+.feature:nth-child(even) .feature-media { order: 2; }
+.feature:nth-child(even) .feature-copy { order: 1; }
+.feature + .feature { border-top: 1px solid var(--line); }
+.feature h2 { margin: 0 0 0.9rem; font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -0.045em; line-height: 1.15; }
+.feature p { margin: 0; max-width: 30rem; color: var(--ink-soft); }
+.feature-mark { width: 36px; height: 3px; margin-bottom: 1.5rem; background: var(--rose); }
+.feature-media { width: min(430px, 100%); justify-self: center; }
+/* プロジェクトの公開PNGは1320:2868の縦画面。元比率を固定し、端末ごとに画像を伸縮させない。 */
+.feature-media img { display: block; width: 100%; height: auto; aspect-ratio: 1320 / 2868; object-fit: contain; border-radius: 26px; border: 1px solid var(--line); box-shadow: 0 22px 55px rgba(28, 20, 24, 0.1); }
+.final-cta { background: var(--blush); border-block: 1px solid #f4dfe6; text-align: center; padding-block: 5rem; }
+.final-cta h2 { margin: 0; font-size: clamp(2.15rem, 5vw, 3.6rem); letter-spacing: -0.045em; }
+.final-cta .cta { min-width: 250px; }
+.foot { padding-block: 2.5rem 4rem; color: var(--ink-soft); font-size: 0.85rem; }
+.foot .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.7rem 1.5rem; }
+.foot p { margin: 0; }
+.foot a { color: var(--ink-soft); }
+@media (min-width: 901px) {
+  /* 小さめのノートPCでも、CTAと公式画面全体を最初の画面内に収める。 */
+  .hero-media { display: flex; align-items: center; justify-content: center; }
+  .hero-media img { width: auto; height: min(560px, calc(100vh - 140px)); max-width: 100%; }
+  .feature-media { display: flex; align-items: center; justify-content: center; }
+  .feature-media img { width: auto; height: min(520px, calc(100vh - 170px)); max-width: 100%; }
+}
+/* 横向きiPhoneでも2列のまま押し込まない。900px以下は縦積みにして、
+   公式スクリーンショットの全体が見える比率を保つ。 */
+@media (max-width: 900px) {
+  .wrap { width: min(100% - 2rem, 620px); }
+  .hero { min-height: 0; grid-template-columns: 1fr; gap: 2.5rem; padding-block: 3.5rem 4rem; }
+  .hero-copy { padding: 0; }
+  .app-icon { width: 92px; height: 92px; border-radius: 21px; }
+  .hero-media { width: min(350px, 94%); }
+  .feature, .feature:nth-child(even) { grid-template-columns: 1fr; min-height: 0; gap: 2.3rem; padding-block: 4rem; }
+  .feature:nth-child(even) .feature-media, .feature:nth-child(even) .feature-copy { order: initial; }
+  .feature-media { width: min(360px, 94%); }
+  .final-cta { padding-block: 4rem; }
+  .foot .wrap { display: block; }
+  .foot p + p { margin-top: 0.55rem; }
+}
+/* 高さの低い横向き端末では、ヒーローだけをコンパクトな2列へ戻す。
+   画像は高さ基準のcontain表示にして、上下を切らず1画面内に収める。 */
+@media (orientation: landscape) and (max-width: 950px) and (max-height: 500px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(140px, 190px);
+    gap: 2rem;
+    min-height: calc(100vh - 58px);
+    padding-block: 1.2rem;
+  }
+  .app-icon { width: 62px; height: 62px; border-radius: 14px; }
+  h1 { margin: 0.65rem 0 0.45rem; font-size: clamp(1.85rem, 5vw, 2.45rem); }
+  .lead { font-size: 0.85rem; line-height: 1.55; }
+  .cta { min-height: 40px; margin-top: 0.75rem; padding: 0.45rem 1.1rem; font-size: 0.85rem; }
+  .hero-media { width: auto; }
+  .hero-media img { width: auto; max-width: 100%; max-height: calc(100vh - 92px); margin-inline: auto; border-radius: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cta { transition: none; }
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="home" href="../">← Holy App</a>
+    <a class="store" href="https://apps.apple.com/jp/app/id6795886409">App Store ↗</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <img class="app-icon" src="../assets/icons/hanon.png" alt="ハノン日和" width="112" height="112">
+      <h1>毎日のハノンを、<br>自分のペースで。</h1>
+      <p class="lead">ランダムにも、楽譜どおりにも。24調の練習と記録を、ひとつのアプリで。</p>
+      <a class="cta" href="https://apps.apple.com/jp/app/id6795886409">App Storeで見る</a>
+    </div>
+    <div class="hero-media">
+      <img src="../assets/shots/hanon-1.png" alt="ハノン日和の今日の練習画面" width="1320" height="2868">
+    </div>
+  </section>
+
+  <div class="features">
+    <section class="feature wrap">
+      <div class="feature-media">
+        <img src="../assets/shots/hanon-2.png" alt="次の調を選んで練習する画面" width="1320" height="2868">
+      </div>
+      <div class="feature-copy">
+        <div class="feature-mark" aria-hidden="true"></div>
+        <h2>次の調を、<br>アプリが選ぶ</h2>
+        <p>24調を重複なしでランダムに出題。ハノンの楽譜順でも、迷わず練習を始められます。</p>
+      </div>
+    </section>
+
+    <section class="feature wrap">
+      <div class="feature-media">
+        <img src="../assets/shots/hanon-4.png" alt="スケールとカデンツを楽譜で確認する画面" width="1320" height="2868">
+      </div>
+      <div class="feature-copy">
+        <div class="feature-mark" aria-hidden="true"></div>
+        <h2>調号と楽譜を確認</h2>
+        <p>調号のヒントとハノン第39番の楽譜を、その場で確認。スケールとカデンツを丁寧に練習できます。</p>
+      </div>
+    </section>
+
+    <section class="feature wrap">
+      <div class="feature-media">
+        <img src="../assets/shots/hanon-5.png" alt="練習履歴をカレンダーで振り返る画面" width="1320" height="2868">
+      </div>
+      <div class="feature-copy">
+        <div class="feature-mark" aria-hidden="true"></div>
+        <h2>積み重ねを、<br>見える形に</h2>
+        <p>練習後の評価を保存し、リスト・カレンダー・グラフで振り返れます。苦手な調もひと目で確認できます。</p>
+      </div>
+    </section>
+
+    <section class="feature wrap">
+      <div class="feature-media">
+        <img src="../assets/shots/hanon-6.png" alt="メトロノームを調整する画面" width="1320" height="2868">
+      </div>
+      <div class="feature-copy">
+        <div class="feature-mark" aria-hidden="true"></div>
+        <h2>自分のテンポで練習</h2>
+        <p>テンポ・拍子・アクセント・音色を調整。バックグラウンド再生にも対応しています。</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="final-cta">
+    <div class="wrap">
+      <h2>今日から、ひとつずつ。</h2>
+      <a class="cta" href="https://apps.apple.com/jp/app/id6795886409">App Storeで見る</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Holy App</p>
+    <p><a href="https://www.facebook.com/pages/Holy-inc-Apps/136263789773255">プライバシーポリシー</a></p>
+    <p>&copy; 2026 Holy App</p>
+  </div>
+</footer>
+</body>
+</html>

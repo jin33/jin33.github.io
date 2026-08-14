@@ -26,6 +26,7 @@ DEVELOPER = "https://apps.apple.com/jp/developer/holy-inc/id359389894"
 # 各アプリの一言。カードは色を持たない均質なリストなので、ここは文言だけ。
 # App Storeの説明文から機械的に切り出さず、一覧で並べたとき違いが分かる長さで書く。
 CARDS = {
+    "hanon":         "毎日のハノンを、自分のペースで。",
     "replay":        "覚えた曲を、忘れないために。",
     "homekarte":     "家族の体調を、そっと記録する。",
     "taptaptown":    "ぺたっと置いて、街が動きだす。",
