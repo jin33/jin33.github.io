@@ -67,6 +67,8 @@ def build_index(apps: list[dict]) -> None:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Holy App</title>
 <meta name="description" content="Holy App が公開している iPhone・iPad アプリ{len(apps)}本の一覧。">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>

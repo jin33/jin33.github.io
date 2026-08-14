@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <title>バディライフ | Holy App</title>
 <meta name="description" content="マジック:ザ・ギャザリングやバディファイトなど、カードゲーム用のライフカウンター。">
 <!-- 参考: Tapbots のダーク基調と、対戦ゲームのHUD。
      卓上で相手と向き合って使う道具なので、画面が締まって見える暗い配色にした。
      色は汎用のネオンではなく、実機の画面（黒い盤面に対戦者ごとのオレンジと
-     水色の2枚パネル）とアイコンの赤から採った。対戦相手2人ぶんの色を持つのが
+     水色の2枚パネル）と新しいアイコンの青・オレンジから採った。対戦相手2人ぶんの色を持つのが
      このアプリの見た目の核なので、その2色を軸に組み直した。 -->
 <style>
 :root {
@@ -19,7 +21,7 @@
   --line: rgba(242, 242, 242, 0.12);
   --p1: #f4a361;
   --p2: #00bffe;
-  --brand-red: #e60912;
+  --brand: #00a9ee;
 }
 * { box-sizing: border-box; }
 body {
@@ -42,7 +44,7 @@ a { color: inherit; }
 .nav .home { color: var(--fg-soft); }
 
 .hero { padding-block: 4rem 2.5rem; text-align: center; }
-.hero img.icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 0 40px rgba(230, 9, 18, 0.35); }
+.hero img.icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 0 40px rgba(0, 169, 238, 0.35); }
 .hero h1 {
   margin: 1.5rem 0 0.6rem;
   font-size: clamp(2.1rem, 6.5vw, 3.2rem);
@@ -77,7 +79,7 @@ a { color: inherit; }
   font-variant-numeric: tabular-nums;
   font-size: 1.5rem; font-weight: 600;
 }
-.preset.main { border-color: var(--brand-red); color: var(--brand-red); box-shadow: 0 0 20px rgba(230, 9, 18, 0.2); }
+.preset.main { border-color: var(--brand); color: var(--brand); box-shadow: 0 0 20px rgba(0, 169, 238, 0.2); }
 
 .shots { display: flex; gap: 1.5rem; justify-content: safe center; overflow-x: auto; padding: 3.5rem 1.5rem; }
 .shots img { height: 460px; border-radius: 20px; border: 1px solid var(--line); flex: none; }
@@ -86,7 +88,7 @@ a { color: inherit; }
 .feature { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 1.6rem; }
 .feature h3 { margin: 0 0 0.3rem; font-size: 1rem; font-weight: 650; }
 .feature p { margin: 0; font-size: 0.9rem; color: var(--fg-soft); }
-.feature .tag { display: inline-block; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand-red); margin-bottom: 0.6rem; }
+.feature .tag { display: inline-block; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand); margin-bottom: 0.6rem; }
 
 .notice { border-top: 1px solid var(--line); padding: 2.5rem 0; font-size: 0.85rem; color: var(--fg-soft); }
 .notice p { margin: 0.35rem 0; }
