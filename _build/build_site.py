@@ -110,6 +110,8 @@ def build_index(apps: list[dict]) -> None:
 
 def main() -> None:
     apps = json.loads(DATA.read_text(encoding="utf-8"))["apps"]
+    # 更新日ではなく、App Storeの初回リリース日が新しい順。日付のない旧データは最後に置く。
+    apps.sort(key=lambda a: (a.get("releaseDate") or "", a["slug"]), reverse=True)
     missing = [a["slug"] for a in apps if a["slug"] not in CARDS]
     if missing:
         raise SystemExit(f"CARDS に一言と色がないアプリ: {', '.join(missing)}")

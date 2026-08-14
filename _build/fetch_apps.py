@@ -28,8 +28,8 @@ SHOT_DIR = ROOT / "assets" / "shots"
 PROJECT_ROOT = ROOT.parents[1]
 HANON_PUBLIC_SHOTS = PROJECT_ROOT / "01_Xcodeプロジェクト" / "wip" / "Hanon" / "fastlane" / "screenshots" / "final" / "ja"
 
-# 掲載順とURLのスラッグをここで固定する。trackId から機械的に作ると、
-# アプリを足したときにURLが変わってしまうため。
+# 同期対象とURLのスラッグをここで固定する。trackId から機械的に作ると、
+# アプリを足したときにURLが変わってしまうため。掲載順は初回リリース日で決める。
 APPS = [
     ("hanon", 6795886409),
     ("replay", 6792226081),
@@ -116,6 +116,8 @@ def main() -> None:
             "slug": slug,
             "trackId": track_id,
             "name": r["trackName"],
+            # App Storeの初回リリース日。currentVersionReleaseDateは使わない。
+            "releaseDate": r.get("releaseDate", ""),
             "genre": r.get("primaryGenreName", ""),
             "description": r.get("description", ""),
             "url": r["trackViewUrl"].split("?")[0],
@@ -124,6 +126,7 @@ def main() -> None:
         })
         print(f"ok   {slug}: {r['trackName']}")
 
+    apps.sort(key=lambda a: (a.get("releaseDate") or "", a["slug"]), reverse=True)
     OUT.write_text(json.dumps({"apps": apps}, ensure_ascii=False, indent=2) + "\n",
                    encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)} ({len(apps)} apps)")
